@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30709.132
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desk.Gist", "src\Desk.Gist\Desk.Gist.csproj", "{73595992-F89A-4DC3-B9F5-21ABDAED3C00}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desk.Gist.Test", "test\Desk.Gist.Test\Desk.Gist.Test.csproj", "{81679768-B930-483C-830E-0B01C7DD70A1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73595992-F89A-4DC3-B9F5-21ABDAED3C00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73595992-F89A-4DC3-B9F5-21ABDAED3C00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73595992-F89A-4DC3-B9F5-21ABDAED3C00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73595992-F89A-4DC3-B9F5-21ABDAED3C00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81679768-B930-483C-830E-0B01C7DD70A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81679768-B930-483C-830E-0B01C7DD70A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81679768-B930-483C-830E-0B01C7DD70A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81679768-B930-483C-830E-0B01C7DD70A1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5562638A-BC25-48DA-AAD8-743A2D23BAE0}
+	EndGlobalSection
+EndGlobal
