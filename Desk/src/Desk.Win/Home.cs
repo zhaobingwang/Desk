@@ -27,9 +27,8 @@ namespace Desk.Win
 
         private void Home_Load(object sender, EventArgs e)
         {
-            MessageBox.Show(_configuration.GetSection("AppName").Value);
             var count = _dbContext.AssetTypes.Count();
-            MessageBox.Show(count.ToString());
+            //MessageBox.Show(count.ToString());
             _logger.LogInformation("打开了Home");
         }
     }

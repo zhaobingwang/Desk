@@ -28,7 +28,7 @@ namespace Desk.WebMvc
 
             services.AddDbContext<DeskDbContext>(option =>
             {
-                option.UseSqlServer(Configuration.GetConnectionString("MSSQL"));
+                option.UseSqlite(Configuration.GetConnectionString("SQLite"));
             });
         }
 

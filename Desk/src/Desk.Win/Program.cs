@@ -27,17 +27,20 @@ namespace Desk.Win
             Application.SetCompatibleTextRenderingDefault(false);
 
             IConfiguration configuration;
-
-            var serilogLogger = new LoggerConfiguration()
-                   .MinimumLevel.Information()
-                   .WriteTo.SQLite(@"C:\LocalDB\SQLite\Desk.db")
-                   .CreateLogger();
-
             var builderConfig = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .AddEnvironmentVariables();
             configuration = builderConfig.Build();
-            MessageBox.Show(configuration.GetSection("AppName").Value);
+
+            var serilogLogger = new LoggerConfiguration()
+                   .MinimumLevel.Information()
+                   .MinimumLevel.Override("Microsoft", Serilog.Events.LogEventLevel.Warning)
+                   .MinimumLevel.Override("System", Serilog.Events.LogEventLevel.Error)
+                   .WriteTo.SQLite("C:\\LocalDB\\SQLite\\Desk.db")
+                   .CreateLogger();
+
+
+            //MessageBox.Show(configuration.GetSection("AppName").Value);
 
             var builder = new HostBuilder()
              .ConfigureServices((hostContext, services) =>
@@ -51,7 +54,7 @@ namespace Desk.Win
 
                  services.AddDbContext<DeskDbContext>(option =>
                  {
-                     option.UseSqlServer(configuration.GetConnectionString("MSSQL"));
+                     option.UseSqlite(configuration.GetConnectionString("SQLite"));
                  });
              });
 
