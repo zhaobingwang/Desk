@@ -38,6 +38,7 @@ namespace Desk.Win
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "Home";
             this.Text = "Home";
+            this.Load += new System.EventHandler(this.Home_Load);
             this.ResumeLayout(false);
 
         }
