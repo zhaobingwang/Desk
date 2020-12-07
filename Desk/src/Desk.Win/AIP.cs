@@ -15,7 +15,7 @@ namespace Desk.Win
     /// <summary>
     /// automatic investment plan 
     /// </summary>
-    public partial class AIP : Form
+    public partial class AIP : BaseForm
     {
         public AIP()
         {

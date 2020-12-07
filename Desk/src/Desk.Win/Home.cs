@@ -13,12 +13,11 @@ using System.Windows.Forms;
 
 namespace Desk.Win
 {
-    public partial class Home : Form
+    public partial class Home : BaseForm
     {
         private readonly ILogger<Home> _logger;
         private readonly DeskDbContext _dbContext;
         private readonly AssetForm _assetForm;
-        private readonly IConfiguration _configuration;
         public Home(ILogger<Home> logger, DeskDbContext dbContext, AssetForm assetForm)
         {
             _logger = logger;
@@ -38,6 +37,17 @@ namespace Desk.Win
             var count = _dbContext.AssetTypes.Count();
             //MessageBox.Show(count.ToString());
             _logger.LogInformation("打开了Home");
+
+            SendBalloonTip("测试", $"通知：{DateTime.Now}");
+        }
+
+        private void Home_SizeChanged(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Minimized)
+            {
+                // 隐藏任务栏图标
+                ShowInTaskbar = false;
+            }
         }
     }
 }

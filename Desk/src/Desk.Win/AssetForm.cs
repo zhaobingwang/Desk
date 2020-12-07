@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace Desk.Win
 {
-    public partial class AssetForm : Form
+    public partial class AssetForm : BaseForm
     {
         private readonly DeskDbContext _dbContext;
 
