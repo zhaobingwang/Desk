@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Desk.Infrastructure.Data.MSSQL.Migrations
+namespace Desk.Infrastructure.Data.Migrations
 {
     public partial class Init : Migration
     {
@@ -11,13 +11,13 @@ namespace Desk.Infrastructure.Data.MSSQL.Migrations
                 name: "AssetRecord",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    TypeCode = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
-                    TypeName = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
-                    TotalAsset = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    CreateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    IsDeleted = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    TypeCode = table.Column<string>(type: "TEXT", maxLength: 64, nullable: false),
+                    TypeName = table.Column<string>(type: "TEXT", maxLength: 64, nullable: false),
+                    TotalAsset = table.Column<decimal>(type: "TEXT", nullable: false),
+                    CreateTime = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    IsDeleted = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -28,8 +28,9 @@ namespace Desk.Infrastructure.Data.MSSQL.Migrations
                 name: "AssetType",
                 columns: table => new
                 {
-                    Code = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false)
+                    Code = table.Column<string>(type: "TEXT", maxLength: 64, nullable: false),
+                    Name = table.Column<string>(type: "TEXT", maxLength: 64, nullable: false),
+                    Method = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {

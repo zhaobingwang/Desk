@@ -17,12 +17,20 @@ namespace Desk.Win
     {
         private readonly ILogger<Home> _logger;
         private readonly DeskDbContext _dbContext;
+        private readonly AssetForm _assetForm;
         private readonly IConfiguration _configuration;
-        public Home(ILogger<Home> logger, DeskDbContext dbContext)
+        public Home(ILogger<Home> logger, DeskDbContext dbContext, AssetForm assetForm)
         {
             _logger = logger;
             _dbContext = dbContext;
+            _assetForm = assetForm;
             InitializeComponent();
+            mnsItemAsset.Click += MnsItemAsset_Click;
+        }
+
+        private void MnsItemAsset_Click(object sender, EventArgs e)
+        {
+            _assetForm.ShowDialog();
         }
 
         private void Home_Load(object sender, EventArgs e)

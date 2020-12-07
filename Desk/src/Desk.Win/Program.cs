@@ -46,6 +46,7 @@ namespace Desk.Win
              .ConfigureServices((hostContext, services) =>
              {
                  services.AddSingleton<Home>();
+                 services.AddScoped<AssetForm>();
                  services.AddLogging(x =>
                  {
                      x.SetMinimumLevel(LogLevel.Debug);
@@ -65,6 +66,7 @@ namespace Desk.Win
                 var service = serviceScope.ServiceProvider;
                 try
                 {
+                    SeedData.SeedAsync(service).Wait();
                     var home = service.GetRequiredService<Home>();
                     Application.Run(home);
                 }
