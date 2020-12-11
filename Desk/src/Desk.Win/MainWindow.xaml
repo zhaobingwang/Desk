@@ -12,6 +12,11 @@
             <ColumnDefinition Width="249*"/>
         </Grid.ColumnDefinitions>
         <Menu Grid.ColumnSpan="2">
+            <MenuItem Header="资产">
+                <MenuItem Header="资产管理" Click="MenuItem_Asset_Click">
+
+                </MenuItem>
+            </MenuItem>
             <MenuItem Header="关于">
                 <MenuItem Header="版本号" Click="MenuItem_Version_Click">
 

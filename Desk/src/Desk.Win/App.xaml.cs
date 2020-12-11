@@ -1,4 +1,5 @@
 ﻿using Desk.Infrastructure.Data;
+using Desk.Win.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -57,6 +58,9 @@ namespace Desk.Win
             services.Configure<AppSettings>(Configuration.GetSection(nameof(AppSettings)));
 
             services.AddSingleton<MainWindow>();
+
+            services.AddScoped<AssetService>();
+            //services.AddScoped<AssetWindow>();
         }
 
         private void OnStartup(object sender, StartupEventArgs e)

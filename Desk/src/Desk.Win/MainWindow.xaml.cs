@@ -1,4 +1,5 @@
 ﻿using Desk.Infrastructure.Data;
+using Desk.Win;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -25,14 +26,14 @@ namespace Desk.Win
     public partial class MainWindow : Window
     {
         public AppSettings AppSettings { get; }
-        private readonly DeskDbContext _dbContext;
         private readonly ILogger<MainWindow> _logger;
+        private readonly AssetWindow _assetWindow;
 
-        public MainWindow(DeskDbContext dbContext, IOptions<AppSettings> appSettings, ILogger<MainWindow> logger)
+        public MainWindow(IOptions<AppSettings> appSettings, ILogger<MainWindow> logger,AssetWindow assetWindow)
         {
             InitializeComponent();
-            _dbContext = dbContext;
             _logger = logger;
+            _assetWindow = assetWindow;
             AppSettings = appSettings.Value;
         }
 
@@ -49,9 +50,14 @@ namespace Desk.Win
             _logger.LogWarning("warning");
             _logger.LogError("error");
             _logger.LogCritical("critical");
-            
-            var tmp = _dbContext.AssetRecords.Count();
-            MessageBox.Show(tmp.ToString());
+
+            //var tmp = _dbContext.AssetRecords.Count();
+            //MessageBox.Show(tmp.ToString());
+        }
+
+        private void MenuItem_Asset_Click(object sender, RoutedEventArgs e)
+        {
+            _assetWindow.ShowDialog();
         }
     }
 }
