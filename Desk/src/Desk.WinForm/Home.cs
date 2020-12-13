@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Desk.WinForm.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,23 @@ namespace Desk.WinForm
         public Home()
         {
             InitializeComponent();
+
+            BindEvent();
+        }
+
+        private void BindEvent()
+        {
+            mnsItemAsset.Click += MnsItemAsset_Click;
+        }
+
+        private void MnsItemAsset_Click(object sender, EventArgs e)
+        {
+            AssetHomeForm assetHomeForm = new AssetHomeForm();
+            assetHomeForm.ShowDialog();
+        }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
         }
     }
 }
