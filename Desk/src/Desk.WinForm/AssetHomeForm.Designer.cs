@@ -37,6 +37,7 @@ namespace Desk.WinForm
             this.cmbAssetType = new System.Windows.Forms.ComboBox();
             this.btnAddAsset = new System.Windows.Forms.Button();
             this.dgvAssetStatistics = new System.Windows.Forms.DataGridView();
+            this.cartesianChartAsset = new LiveCharts.WinForms.CartesianChart();
             this.dgvAssetRecords = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -52,16 +53,17 @@ namespace Desk.WinForm
             this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.pnlAddAsset);
+            this.splitContainer1.Panel1.Controls.Add(this.dgvAssetStatistics);
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.dgvAssetStatistics);
+            this.splitContainer1.Panel2.Controls.Add(this.cartesianChartAsset);
             this.splitContainer1.Panel2.Controls.Add(this.dgvAssetRecords);
             this.splitContainer1.Size = new System.Drawing.Size(1503, 840);
             this.splitContainer1.SplitterDistance = 501;
@@ -77,7 +79,7 @@ namespace Desk.WinForm
             this.pnlAddAsset.Controls.Add(this.btnAddAsset);
             this.pnlAddAsset.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlAddAsset.Location = new System.Drawing.Point(0, 0);
-            this.pnlAddAsset.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlAddAsset.Margin = new System.Windows.Forms.Padding(4);
             this.pnlAddAsset.Name = "pnlAddAsset";
             this.pnlAddAsset.Size = new System.Drawing.Size(499, 227);
             this.pnlAddAsset.TabIndex = 0;
@@ -85,7 +87,7 @@ namespace Desk.WinForm
             // txtAssetTotal
             // 
             this.txtAssetTotal.Location = new System.Drawing.Point(210, 108);
-            this.txtAssetTotal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAssetTotal.Margin = new System.Windows.Forms.Padding(4);
             this.txtAssetTotal.Name = "txtAssetTotal";
             this.txtAssetTotal.Size = new System.Drawing.Size(184, 30);
             this.txtAssetTotal.TabIndex = 4;
@@ -114,7 +116,7 @@ namespace Desk.WinForm
             // 
             this.cmbAssetType.FormattingEnabled = true;
             this.cmbAssetType.Location = new System.Drawing.Point(210, 40);
-            this.cmbAssetType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbAssetType.Margin = new System.Windows.Forms.Padding(4);
             this.cmbAssetType.Name = "cmbAssetType";
             this.cmbAssetType.Size = new System.Drawing.Size(184, 32);
             this.cmbAssetType.TabIndex = 1;
@@ -122,7 +124,7 @@ namespace Desk.WinForm
             // btnAddAsset
             // 
             this.btnAddAsset.Location = new System.Drawing.Point(210, 175);
-            this.btnAddAsset.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddAsset.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddAsset.Name = "btnAddAsset";
             this.btnAddAsset.Size = new System.Drawing.Size(115, 35);
             this.btnAddAsset.TabIndex = 0;
@@ -132,22 +134,35 @@ namespace Desk.WinForm
             // 
             // dgvAssetStatistics
             // 
+            this.dgvAssetStatistics.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAssetStatistics.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAssetStatistics.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvAssetStatistics.Location = new System.Drawing.Point(0, 341);
-            this.dgvAssetStatistics.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvAssetStatistics.Margin = new System.Windows.Forms.Padding(4);
             this.dgvAssetStatistics.Name = "dgvAssetStatistics";
             this.dgvAssetStatistics.RowHeadersWidth = 51;
             this.dgvAssetStatistics.RowTemplate.Height = 29;
-            this.dgvAssetStatistics.Size = new System.Drawing.Size(995, 497);
+            this.dgvAssetStatistics.Size = new System.Drawing.Size(499, 497);
             this.dgvAssetStatistics.TabIndex = 1;
+            // 
+            // cartesianChartAsset
+            // 
+            this.cartesianChartAsset.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cartesianChartAsset.Location = new System.Drawing.Point(0, 344);
+            this.cartesianChartAsset.Name = "cartesianChartAsset";
+            this.cartesianChartAsset.Size = new System.Drawing.Size(995, 494);
+            this.cartesianChartAsset.TabIndex = 0;
+            this.cartesianChartAsset.Text = "cartesianChart1";
             // 
             // dgvAssetRecords
             // 
+            this.dgvAssetRecords.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAssetRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAssetRecords.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgvAssetRecords.Location = new System.Drawing.Point(0, 0);
-            this.dgvAssetRecords.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvAssetRecords.Margin = new System.Windows.Forms.Padding(4);
             this.dgvAssetRecords.Name = "dgvAssetRecords";
             this.dgvAssetRecords.RowHeadersWidth = 51;
             this.dgvAssetRecords.RowTemplate.Height = 29;
@@ -160,7 +175,7 @@ namespace Desk.WinForm
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1503, 840);
             this.Controls.Add(this.splitContainer1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AssetHomeForm";
             this.Text = "AssetHomeForm";
             this.Load += new System.EventHandler(this.AssetHomeForm_Load);
@@ -187,5 +202,6 @@ namespace Desk.WinForm
         private System.Windows.Forms.Button btnAddAsset;
         private System.Windows.Forms.DataGridView dgvAssetRecords;
         private System.Windows.Forms.DataGridView dgvAssetStatistics;
+        private LiveCharts.WinForms.CartesianChart cartesianChartAsset;
     }
 }

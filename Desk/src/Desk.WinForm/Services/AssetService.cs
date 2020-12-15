@@ -22,7 +22,7 @@ namespace Desk.WinForm.Services
             return result;
         }
 
-        public async Task<List<AssetStatistics>> GetAssetAsync()
+        public async Task<List<AssetStatistics>> GetAssetsAsync()
         {
             var assetRecords = await db.AssetRecords.ToListAsync();
             var result = assetRecords.GroupBy(x => x.CreateTime.ToString("yyyy-MM-dd")).Select(x => new AssetStatistics { Day = x.Key, Total = x.Sum(y => y.TotalAsset) });

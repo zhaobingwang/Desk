@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LiveCharts;
 using LiveCharts.WinForms;
+using LiveCharts.Wpf;
+using System.Windows.Media;
 
 namespace Desk.WinForm
 {
@@ -22,6 +24,7 @@ namespace Desk.WinForm
             InitializeComponent();
 
             assetService = new AssetService();
+
         }
 
         private async void AssetHomeForm_Load(object sender, EventArgs e)
@@ -33,6 +36,7 @@ namespace Desk.WinForm
 
             await LoadAssetRecordsAsync();
             await LoadAssetStatisticsAsync();
+            await LoadTotalAssetLineChartAsync();
         }
 
         private async void btnAddAsset_Click(object sender, EventArgs e)
@@ -59,6 +63,7 @@ namespace Desk.WinForm
 
             await LoadAssetRecordsAsync();
             await LoadAssetStatisticsAsync();
+            await LoadTotalAssetLineChartAsync();
         }
 
         private async Task LoadAssetRecordsAsync()
@@ -69,8 +74,43 @@ namespace Desk.WinForm
 
         private async Task LoadAssetStatisticsAsync()
         {
-            var statistics = await assetService.GetAssetAsync();
+            var statistics = await assetService.GetAssetsAsync();
             dgvAssetStatistics.DataSource = statistics;
+        }
+
+        private async Task LoadTotalAssetLineChartAsync()
+        {
+            cartesianChartAsset.AxisX = new AxesCollection();
+            cartesianChartAsset.AxisY = new AxesCollection();
+
+            var totalAssetsByDay = await assetService.GetAssetsAsync();
+
+
+            var values = totalAssetsByDay.Select(x => Convert.ToDouble(x.Total));
+            var labels = totalAssetsByDay.Select(x => x.Day).ToList();
+
+
+            cartesianChartAsset.Series = new SeriesCollection {
+                new LineSeries
+                {
+                    Title = "总资产",
+                    Values =new ChartValues<double>(values)
+                }
+            };
+
+            cartesianChartAsset.AxisX.Add(new Axis
+            {
+                Title = "天",
+                Labels = labels
+            });
+
+            cartesianChartAsset.AxisY.Add(new Axis
+            {
+                Title = "金额",
+                LabelFormatter = value => value.ToString("C")
+            });
+
+            cartesianChartAsset.LegendLocation = LegendLocation.Right;
         }
     }
 }
