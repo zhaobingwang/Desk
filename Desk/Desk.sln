@@ -17,7 +17,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desk.Win", "src\Desk.Win\De
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desk.Demo.Client.Wpf", "..\Demo\Desk.Demo.Client.Wpf\Desk.Demo.Client.Wpf.csproj", "{F177A0CC-7CF6-4A79-AEC1-5DED69331F82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desk.WinForm", "src\Desk.WinForm\Desk.WinForm.csproj", "{523C17C9-9FB1-4959-9DFB-FC375663060F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desk.WinForm", "src\Desk.WinForm\Desk.WinForm.csproj", "{523C17C9-9FB1-4959-9DFB-FC375663060F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "livecharts", "livecharts", "{F37D8613-D2A2-496C-AA0B-F980D8C884D3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiveCharts.WinForms", "..\Dependencies\LiveCharts\WinFormsView\LiveCharts.WinForms.csproj", "{DA7852F4-8642-4836-BE5F-843874EBE1AB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Winforms", "..\Dependencies\LiveCharts\Winforms\Winforms.csproj", "{BFE2CAC0-AB42-472A-9D8A-1C070B9EFD42}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +55,14 @@ Global
 		{523C17C9-9FB1-4959-9DFB-FC375663060F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{523C17C9-9FB1-4959-9DFB-FC375663060F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{523C17C9-9FB1-4959-9DFB-FC375663060F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA7852F4-8642-4836-BE5F-843874EBE1AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA7852F4-8642-4836-BE5F-843874EBE1AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA7852F4-8642-4836-BE5F-843874EBE1AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA7852F4-8642-4836-BE5F-843874EBE1AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFE2CAC0-AB42-472A-9D8A-1C070B9EFD42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFE2CAC0-AB42-472A-9D8A-1C070B9EFD42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFE2CAC0-AB42-472A-9D8A-1C070B9EFD42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFE2CAC0-AB42-472A-9D8A-1C070B9EFD42}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +74,8 @@ Global
 		{5FF18D3A-C2E1-4102-8BF5-EA631B9EF1E7} = {E050EB64-4E41-44BE-AAE7-96FF43BB5D82}
 		{F177A0CC-7CF6-4A79-AEC1-5DED69331F82} = {8A7CA0A5-C2ED-4661-9296-9E90EB975ED0}
 		{523C17C9-9FB1-4959-9DFB-FC375663060F} = {E050EB64-4E41-44BE-AAE7-96FF43BB5D82}
+		{DA7852F4-8642-4836-BE5F-843874EBE1AB} = {F37D8613-D2A2-496C-AA0B-F980D8C884D3}
+		{BFE2CAC0-AB42-472A-9D8A-1C070B9EFD42} = {F37D8613-D2A2-496C-AA0B-F980D8C884D3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9EDF470C-CD1D-4FF0-A857-50CB74179B1F}
