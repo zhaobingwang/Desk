@@ -31,7 +31,10 @@ namespace Desk.WinForm.Services
 
         public async Task<List<AssetRecord>> GetAssetRecordsAsync()
         {
-            var result = await db.AssetRecords.Where(x => x.CreateTime >= DateTime.Now.AddDays(-30)).ToListAsync();
+            var result = await db.AssetRecords
+                .Where(x => x.CreateTime >= DateTime.Now.AddDays(-30))
+                .OrderByDescending(x => x.CreateTime)
+                .ToListAsync();
             return result;
         }
 

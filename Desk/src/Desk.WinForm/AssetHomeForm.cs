@@ -69,7 +69,7 @@ namespace Desk.WinForm
         private async Task LoadAssetRecordsAsync()
         {
             var assetRecords = await assetService.GetAssetRecordsAsync();
-            dgvAssetRecords.DataSource = assetRecords;
+            dgvAssetRecords.DataSource = assetRecords.OrderByDescending(x => x.CreateTime).ToList();
         }
 
         private async Task LoadAssetStatisticsAsync()
@@ -84,7 +84,6 @@ namespace Desk.WinForm
             cartesianChartAsset.AxisY = new AxesCollection();
 
             var totalAssetsByDay = await assetService.GetAssetsAsync();
-
 
             var values = totalAssetsByDay.Select(x => Convert.ToDouble(x.Total));
             var labels = totalAssetsByDay.Select(x => x.Day).ToList();
