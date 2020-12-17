@@ -30,6 +30,7 @@ namespace Desk.WinForm
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.mnsHome = new System.Windows.Forms.MenuStrip();
             this.mnsItemTools = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsItemAsset = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,6 +76,7 @@ namespace Desk.WinForm
             // icnMain
             // 
             this.icnMain.ContextMenuStrip = this.cmnNotify;
+            this.icnMain.Icon = ((System.Drawing.Icon)(resources.GetObject("icnMain.Icon")));
             this.icnMain.Text = "notifyIcon1";
             this.icnMain.Visible = true;
             this.icnMain.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.icnMain_MouseDoubleClick);
@@ -131,6 +133,7 @@ namespace Desk.WinForm
             this.ClientSize = new System.Drawing.Size(1511, 964);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.mnsHome);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mnsHome;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Home";

@@ -65,7 +65,7 @@ namespace Desk.WinForm
                 // 隐藏任务栏图标
                 ShowInTaskbar = false;
                 // 图标显示在托盘栏
-                icnMain.Icon = SystemIcons.Application;
+                //icnMain.Icon = SystemIcons.Application;
                 icnMain.Visible = true;
             }
         }
