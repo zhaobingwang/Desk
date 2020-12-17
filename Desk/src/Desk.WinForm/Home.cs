@@ -1,4 +1,6 @@
 ﻿using Desk.WinForm.Services;
+using LiveCharts;
+using LiveCharts.Wpf;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,17 +15,25 @@ namespace Desk.WinForm
 {
     public partial class Home : Form
     {
+        SharedChart sharedChart;
         public Home()
         {
             InitializeComponent();
 
             BindEvent();
+            sharedChart = new SharedChart();
         }
 
         private void BindEvent()
         {
             mnsItemAsset.Click += MnsItemAsset_Click;
             cmnNotifyExit.Click += CmnNotifyExit_Click;
+            cmnNotifyAddAsset.Click += CmnNotifyAddAsset_Click;
+        }
+
+        private void CmnNotifyAddAsset_Click(object sender, EventArgs e)
+        {
+            OpenAssetForm();
         }
 
         private void CmnNotifyExit_Click(object sender, EventArgs e)
@@ -33,12 +43,19 @@ namespace Desk.WinForm
 
         private void MnsItemAsset_Click(object sender, EventArgs e)
         {
-            AssetHomeForm assetHomeForm = new AssetHomeForm();
-            assetHomeForm.ShowDialog();
+            OpenAssetForm();
         }
 
-        private void Home_Load(object sender, EventArgs e)
+        private void OpenAssetForm()
         {
+            AssetHomeForm assetHomeForm = new AssetHomeForm();
+            assetHomeForm.StartPosition = FormStartPosition.CenterScreen;
+            assetHomeForm.Show();
+        }
+
+        private async void Home_Load(object sender, EventArgs e)
+        {
+            await sharedChart.LoadTotalAssetLineChartAsync(cartesianChartAsset);
         }
 
         private void Home_SizeChanged(object sender, EventArgs e)
