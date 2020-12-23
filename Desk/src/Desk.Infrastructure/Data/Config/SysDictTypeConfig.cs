@@ -15,10 +15,20 @@ namespace Desk.Infrastructure.Data.Config
         {
             builder.ToTable(nameof(SysDictType));
 
-            builder.HasKey(x => x.Code);
+            builder.HasKey(x => x.Id);
 
-            builder.HasIndex(x => x.Code).IsUnique();
-            builder.Property(x => x.Code).IsRequired().HasMaxLength(32);
+            builder.HasIndex(x => new { x.Code, x.InternalVersion }).IsUnique();
+
+            builder.Property(x => x.Code).IsRequired().HasMaxLength(50);
+            builder.Property(x => x.Name).IsRequired().HasMaxLength(50);
+            builder.Property(x => x.Description).IsRequired().HasMaxLength(1000);
+            builder.Property(x => x.IsBuiltin).IsRequired().HasMaxLength(1);
+            builder.Property(x => x.Status).IsRequired().HasMaxLength(4);
+            builder.Property(x => x.InternalVersion).IsRequired().HasMaxLength(10);
+            builder.Property(x => x.CreateTime).IsRequired();
+            builder.Property(x => x.CreateUser).IsRequired().HasMaxLength(50);
+            builder.Property(x => x.UpdateTime).IsRequired();
+            builder.Property(x => x.UpdateUser).IsRequired().HasMaxLength(50);
         }
     }
 }

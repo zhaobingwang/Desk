@@ -18,6 +18,12 @@ namespace Desk.Infrastructure.Data
                 await dbContext.AssetTypes.AddRangeAsync(GetAssetType());
                 await dbContext.SaveChangesAsync();
             }
+
+            if (!dbContext.SysDictTypes.Any())
+            {
+                await dbContext.SysDictTypes.AddRangeAsync(GetDictTypes());
+                await dbContext.SaveChangesAsync();
+            }
         }
 
         private static List<AssetType> GetAssetType()
@@ -55,6 +61,28 @@ namespace Desk.Infrastructure.Data
             });
 
             return assetTypes;
+        }
+
+        private static List<SysDictType> GetDictTypes()
+        {
+            var now = DateTime.Now;
+            List<SysDictType> dictTypes = new List<SysDictType>();
+            dictTypes.Add(new SysDictType
+            {
+
+                Code = "REGION-CODE-ABOVE-COUNTY-LEVEL-CN",
+                Name = "中华人民共和国县以上行政区划代码",
+                Description = "中华人民共和国县以上行政区划代码",
+                InternalVersion = "1.0",
+                IsBuiltin = YesOrNo.Yes,
+                Status = Status.Normal,
+                CreateTime = now,
+                CreateUser = "System",
+                UpdateTime = now,
+                UpdateUser = "System"
+            });
+
+            return dictTypes;
         }
     }
 }

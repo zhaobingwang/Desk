@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Desk.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(DeskDbContext))]
-    [Migration("20201223054853_Init")]
+    [Migration("20201223092643_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -72,43 +72,67 @@ namespace Desk.Infrastructure.Data.Migrations
 
             modelBuilder.Entity("Desk.Infrastructure.Entities.SysDict", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Code")
-                        .HasMaxLength(32)
+                        .IsRequired()
+                        .HasMaxLength(50)
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("CreateTime")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("CreateUser")
+                        .IsRequired()
+                        .HasMaxLength(50)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(1000)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("InternalVersion")
+                        .IsRequired()
+                        .HasMaxLength(10)
                         .HasColumnType("TEXT");
 
                     b.Property<int>("IsBuiltin")
+                        .HasMaxLength(1)
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Status")
+                        .HasMaxLength(4)
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("TypeCode")
+                        .IsRequired()
+                        .HasMaxLength(50)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("TypeName")
+                        .IsRequired()
+                        .HasMaxLength(50)
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("UpdateTime")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("UpdateUser")
+                        .IsRequired()
+                        .HasMaxLength(50)
                         .HasColumnType("TEXT");
 
-                    b.HasKey("Code");
+                    b.HasKey("Id");
 
-                    b.HasIndex("Code")
+                    b.HasIndex("Code", "InternalVersion", "TypeCode")
                         .IsUnique();
 
                     b.ToTable("SysDict");
@@ -116,37 +140,57 @@ namespace Desk.Infrastructure.Data.Migrations
 
             modelBuilder.Entity("Desk.Infrastructure.Entities.SysDictType", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Code")
-                        .HasMaxLength(32)
+                        .IsRequired()
+                        .HasMaxLength(50)
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("CreateTime")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("CreateUser")
+                        .IsRequired()
+                        .HasMaxLength(50)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(1000)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("InternalVersion")
+                        .IsRequired()
+                        .HasMaxLength(10)
                         .HasColumnType("TEXT");
 
                     b.Property<int>("IsBuiltin")
+                        .HasMaxLength(1)
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Status")
+                        .HasMaxLength(4)
                         .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("UpdateTime")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("UpdateUser")
+                        .IsRequired()
+                        .HasMaxLength(50)
                         .HasColumnType("TEXT");
 
-                    b.HasKey("Code");
+                    b.HasKey("Id");
 
-                    b.HasIndex("Code")
+                    b.HasIndex("Code", "InternalVersion")
                         .IsUnique();
 
                     b.ToTable("SysDictType");
