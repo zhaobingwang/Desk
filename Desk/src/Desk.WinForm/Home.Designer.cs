@@ -34,8 +34,10 @@ namespace Desk.WinForm
             this.mnsHome = new System.Windows.Forms.MenuStrip();
             this.mnsItemTools = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsItemAsset = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnsItemSpider = new System.Windows.Forms.ToolStripMenuItem();
             this.icnMain = new System.Windows.Forms.NotifyIcon(this.components);
             this.cmnNotify = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmnNotifySpider = new System.Windows.Forms.ToolStripMenuItem();
             this.cmnNotifyAddAsset = new System.Windows.Forms.ToolStripMenuItem();
             this.cmnNotifyExit = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -62,7 +64,8 @@ namespace Desk.WinForm
             // mnsItemTools
             // 
             this.mnsItemTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnsItemAsset});
+            this.mnsItemAsset,
+            this.mnsItemSpider});
             this.mnsItemTools.Name = "mnsItemTools";
             this.mnsItemTools.Size = new System.Drawing.Size(71, 28);
             this.mnsItemTools.Text = "Tools";
@@ -70,8 +73,14 @@ namespace Desk.WinForm
             // mnsItemAsset
             // 
             this.mnsItemAsset.Name = "mnsItemAsset";
-            this.mnsItemAsset.Size = new System.Drawing.Size(164, 34);
+            this.mnsItemAsset.Size = new System.Drawing.Size(166, 34);
             this.mnsItemAsset.Text = "Assets";
+            // 
+            // mnsItemSpider
+            // 
+            this.mnsItemSpider.Name = "mnsItemSpider";
+            this.mnsItemSpider.Size = new System.Drawing.Size(166, 34);
+            this.mnsItemSpider.Text = "Spider";
             // 
             // icnMain
             // 
@@ -85,10 +94,17 @@ namespace Desk.WinForm
             // 
             this.cmnNotify.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.cmnNotify.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmnNotifySpider,
             this.cmnNotifyAddAsset,
             this.cmnNotifyExit});
             this.cmnNotify.Name = "cmnNotify";
-            this.cmnNotify.Size = new System.Drawing.Size(153, 64);
+            this.cmnNotify.Size = new System.Drawing.Size(153, 94);
+            // 
+            // cmnNotifySpider
+            // 
+            this.cmnNotifySpider.Name = "cmnNotifySpider";
+            this.cmnNotifySpider.Size = new System.Drawing.Size(152, 30);
+            this.cmnNotifySpider.Text = "Spider";
             // 
             // cmnNotifyAddAsset
             // 
@@ -162,6 +178,8 @@ namespace Desk.WinForm
         private System.Windows.Forms.SplitContainer splitContainer1;
         private LiveCharts.WinForms.CartesianChart cartesianChartAsset;
         private System.Windows.Forms.ToolStripMenuItem cmnNotifyAddAsset;
+        private System.Windows.Forms.ToolStripMenuItem mnsItemSpider;
+        private System.Windows.Forms.ToolStripMenuItem cmnNotifySpider;
     }
 }
 

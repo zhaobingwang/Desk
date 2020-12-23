@@ -26,9 +26,24 @@ namespace Desk.WinForm
 
         private void BindEvent()
         {
+            // 首页菜单栏项目点击事件
             mnsItemAsset.Click += MnsItemAsset_Click;
+            mnsItemSpider.Click += MnsItemSpider_Click;
+
+            // 通知栏图标右键项目点击事件
             cmnNotifyExit.Click += CmnNotifyExit_Click;
             cmnNotifyAddAsset.Click += CmnNotifyAddAsset_Click;
+            cmnNotifySpider.Click += CmnNotifySpider_Click;
+        }
+
+        private void CmnNotifySpider_Click(object sender, EventArgs e)
+        {
+            OpenSpiderForm();
+        }
+
+        private void MnsItemSpider_Click(object sender, EventArgs e)
+        {
+            OpenSpiderForm();
         }
 
         private void CmnNotifyAddAsset_Click(object sender, EventArgs e)
@@ -51,6 +66,13 @@ namespace Desk.WinForm
             AssetHomeForm assetHomeForm = new AssetHomeForm();
             assetHomeForm.StartPosition = FormStartPosition.CenterScreen;
             assetHomeForm.Show();
+        }
+
+        private void OpenSpiderForm()
+        {
+            SpiderForm spiderForm = new SpiderForm();
+            spiderForm.StartPosition = FormStartPosition.CenterScreen;
+            spiderForm.Show();
         }
 
         private async void Home_Load(object sender, EventArgs e)

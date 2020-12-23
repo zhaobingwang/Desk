@@ -8,6 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AngleSharp" Version="0.14.0" />
+    <PackageReference Include="AngleSharp.XPath" Version="1.1.7" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\..\Dependencies\LiveCharts\WinFormsView\LiveCharts.WinForms.csproj" />
     <ProjectReference Include="..\Desk.Infrastructure\Desk.Infrastructure.csproj" />
   </ItemGroup>
