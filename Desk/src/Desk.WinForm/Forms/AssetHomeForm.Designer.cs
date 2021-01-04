@@ -40,6 +40,7 @@ namespace Desk.WinForm
             this.dgvAssetStatistics = new System.Windows.Forms.DataGridView();
             this.cartesianChartAsset = new LiveCharts.WinForms.CartesianChart();
             this.dgvAssetRecords = new System.Windows.Forms.DataGridView();
+            this.btnStats = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -54,11 +55,11 @@ namespace Desk.WinForm
             this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.btnStats);
             this.splitContainer1.Panel1.Controls.Add(this.pnlAddAsset);
             this.splitContainer1.Panel1.Controls.Add(this.dgvAssetStatistics);
             // 
@@ -66,9 +67,8 @@ namespace Desk.WinForm
             // 
             this.splitContainer1.Panel2.Controls.Add(this.cartesianChartAsset);
             this.splitContainer1.Panel2.Controls.Add(this.dgvAssetRecords);
-            this.splitContainer1.Size = new System.Drawing.Size(1503, 840);
-            this.splitContainer1.SplitterDistance = 501;
-            this.splitContainer1.SplitterWidth = 5;
+            this.splitContainer1.Size = new System.Drawing.Size(1230, 700);
+            this.splitContainer1.SplitterDistance = 410;
             this.splitContainer1.TabIndex = 0;
             // 
             // pnlAddAsset
@@ -80,54 +80,48 @@ namespace Desk.WinForm
             this.pnlAddAsset.Controls.Add(this.btnAddAsset);
             this.pnlAddAsset.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlAddAsset.Location = new System.Drawing.Point(0, 0);
-            this.pnlAddAsset.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlAddAsset.Name = "pnlAddAsset";
-            this.pnlAddAsset.Size = new System.Drawing.Size(499, 227);
+            this.pnlAddAsset.Size = new System.Drawing.Size(408, 189);
             this.pnlAddAsset.TabIndex = 0;
             // 
             // txtAssetTotal
             // 
-            this.txtAssetTotal.Location = new System.Drawing.Point(210, 108);
-            this.txtAssetTotal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAssetTotal.Location = new System.Drawing.Point(172, 90);
             this.txtAssetTotal.Name = "txtAssetTotal";
-            this.txtAssetTotal.Size = new System.Drawing.Size(184, 30);
+            this.txtAssetTotal.Size = new System.Drawing.Size(151, 27);
             this.txtAssetTotal.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(78, 113);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(64, 94);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 24);
+            this.label2.Size = new System.Drawing.Size(69, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "总金额：";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(60, 43);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(49, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 24);
+            this.label1.Size = new System.Drawing.Size(84, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "资产类型：";
             // 
             // cmbAssetType
             // 
             this.cmbAssetType.FormattingEnabled = true;
-            this.cmbAssetType.Location = new System.Drawing.Point(210, 40);
-            this.cmbAssetType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbAssetType.Location = new System.Drawing.Point(172, 33);
             this.cmbAssetType.Name = "cmbAssetType";
-            this.cmbAssetType.Size = new System.Drawing.Size(184, 32);
+            this.cmbAssetType.Size = new System.Drawing.Size(151, 28);
             this.cmbAssetType.TabIndex = 1;
             // 
             // btnAddAsset
             // 
-            this.btnAddAsset.Location = new System.Drawing.Point(210, 175);
-            this.btnAddAsset.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddAsset.Location = new System.Drawing.Point(172, 146);
             this.btnAddAsset.Name = "btnAddAsset";
-            this.btnAddAsset.Size = new System.Drawing.Size(115, 35);
+            this.btnAddAsset.Size = new System.Drawing.Size(94, 29);
             this.btnAddAsset.TabIndex = 0;
             this.btnAddAsset.Text = "新增";
             this.btnAddAsset.UseVisualStyleBackColor = true;
@@ -138,12 +132,11 @@ namespace Desk.WinForm
             this.dgvAssetStatistics.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAssetStatistics.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAssetStatistics.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvAssetStatistics.Location = new System.Drawing.Point(0, 341);
-            this.dgvAssetStatistics.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvAssetStatistics.Location = new System.Drawing.Point(0, 284);
             this.dgvAssetStatistics.Name = "dgvAssetStatistics";
             this.dgvAssetStatistics.RowHeadersWidth = 51;
             this.dgvAssetStatistics.RowTemplate.Height = 29;
-            this.dgvAssetStatistics.Size = new System.Drawing.Size(499, 497);
+            this.dgvAssetStatistics.Size = new System.Drawing.Size(408, 414);
             this.dgvAssetStatistics.TabIndex = 1;
             // 
             // cartesianChartAsset
@@ -151,10 +144,10 @@ namespace Desk.WinForm
             this.cartesianChartAsset.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cartesianChartAsset.Location = new System.Drawing.Point(18, 341);
+            this.cartesianChartAsset.Location = new System.Drawing.Point(24, 296);
             this.cartesianChartAsset.Margin = new System.Windows.Forms.Padding(2);
             this.cartesianChartAsset.Name = "cartesianChartAsset";
-            this.cartesianChartAsset.Size = new System.Drawing.Size(941, 470);
+            this.cartesianChartAsset.Size = new System.Drawing.Size(769, 392);
             this.cartesianChartAsset.TabIndex = 0;
             this.cartesianChartAsset.Text = "cartesianChart1";
             // 
@@ -164,21 +157,29 @@ namespace Desk.WinForm
             this.dgvAssetRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAssetRecords.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgvAssetRecords.Location = new System.Drawing.Point(0, 0);
-            this.dgvAssetRecords.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvAssetRecords.Name = "dgvAssetRecords";
             this.dgvAssetRecords.RowHeadersWidth = 51;
             this.dgvAssetRecords.RowTemplate.Height = 29;
-            this.dgvAssetRecords.Size = new System.Drawing.Size(995, 320);
+            this.dgvAssetRecords.Size = new System.Drawing.Size(814, 267);
             this.dgvAssetRecords.TabIndex = 0;
+            // 
+            // btnStats
+            // 
+            this.btnStats.Location = new System.Drawing.Point(4, 196);
+            this.btnStats.Name = "btnStats";
+            this.btnStats.Size = new System.Drawing.Size(147, 52);
+            this.btnStats.TabIndex = 2;
+            this.btnStats.Text = "生成统计数据";
+            this.btnStats.UseVisualStyleBackColor = true;
+            this.btnStats.Click += new System.EventHandler(this.btnStats_Click);
             // 
             // AssetHomeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1503, 840);
+            this.ClientSize = new System.Drawing.Size(1230, 700);
             this.Controls.Add(this.splitContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AssetHomeForm";
             this.Text = "AssetHomeForm";
             this.Load += new System.EventHandler(this.AssetHomeForm_Load);
@@ -206,5 +207,6 @@ namespace Desk.WinForm
         private System.Windows.Forms.DataGridView dgvAssetRecords;
         private System.Windows.Forms.DataGridView dgvAssetStatistics;
         private LiveCharts.WinForms.CartesianChart cartesianChartAsset;
+        private System.Windows.Forms.Button btnStats;
     }
 }

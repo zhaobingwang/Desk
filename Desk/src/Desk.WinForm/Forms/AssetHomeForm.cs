@@ -75,8 +75,13 @@ namespace Desk.WinForm
 
         private async Task LoadAssetStatisticsAsync()
         {
-            var statistics = await assetService.GetAssetsAsync();
+            var statistics = await assetService.GetAssetsAsync(false);
             dgvAssetStatistics.DataSource = statistics;
+        }
+
+        private void btnStats_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
