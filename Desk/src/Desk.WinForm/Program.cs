@@ -21,7 +21,7 @@ namespace Desk.WinForm
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            var home = new ResxToolForm();//Home();
+            var home = new Home();
             home.StartPosition = FormStartPosition.CenterScreen;
             Application.Run(home);
         }

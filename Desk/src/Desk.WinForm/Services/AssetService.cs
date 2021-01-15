@@ -22,11 +22,14 @@ namespace Desk.WinForm.Services
             return result;
         }
 
-        public async Task<List<AssetStatistics>> GetAssetsAsync()
+        public async Task<List<AssetStatistics>> GetAssetsAsync(bool isAsc = true)
         {
             var assetRecords = await db.AssetRecords.ToListAsync();
             var result = assetRecords.GroupBy(x => x.CreateTime.ToString("yyyy-MM-dd")).Select(x => new AssetStatistics { Day = x.Key, Total = x.Sum(y => y.TotalAsset) });
-            return result.ToList();
+            if (isAsc)
+                return result.ToList();
+            else
+                return result.OrderByDescending(x => x.Day).ToList();
         }
 
         public async Task<List<AssetRecord>> GetAssetRecordsAsync()
