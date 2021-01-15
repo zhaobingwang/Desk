@@ -9,7 +9,7 @@ namespace Desk.Gist.Test.ConsoleApp
     {
         static void Main(string[] args)
         {
-            ObserverDesignPatternGist.Run();
+            ToLookUpGist.ToLookupGist2();
         }
     }
 }
