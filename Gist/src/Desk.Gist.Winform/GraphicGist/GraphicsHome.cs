@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Desk.Gist.Winform
+namespace Desk.Gist.Winform.GraphicGist
 {
     public partial class GraphicsHome : Form
     {

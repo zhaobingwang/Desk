@@ -1,5 +1,5 @@
 ﻿
-namespace Desk.Gist.Winform
+namespace Desk.Gist.Winform.GraphicGist
 {
     partial class GraphicsHome
     {

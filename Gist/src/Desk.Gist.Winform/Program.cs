@@ -1,3 +1,4 @@
+using Desk.Gist.Winform.GraphicGist;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace Desk.Gist.Winform
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GraphicsHome());
+            Application.Run(new TmpGraphicForm());
         }
     }
 }
