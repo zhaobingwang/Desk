@@ -30,6 +30,8 @@ namespace Desk.Gist.Winform.GraphicGist
         private void InitializeComponent()
         {
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.btnDrawLine = new System.Windows.Forms.Button();
+            this.btnChar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // pnlMain
@@ -40,11 +42,33 @@ namespace Desk.Gist.Winform.GraphicGist
             this.pnlMain.Size = new System.Drawing.Size(992, 599);
             this.pnlMain.TabIndex = 0;
             // 
+            // btnDrawLine
+            // 
+            this.btnDrawLine.Location = new System.Drawing.Point(1086, 48);
+            this.btnDrawLine.Name = "btnDrawLine";
+            this.btnDrawLine.Size = new System.Drawing.Size(112, 34);
+            this.btnDrawLine.TabIndex = 1;
+            this.btnDrawLine.Text = "Line";
+            this.btnDrawLine.UseVisualStyleBackColor = true;
+            this.btnDrawLine.Click += new System.EventHandler(this.btnDrawLine_Click);
+            // 
+            // btnChar
+            // 
+            this.btnChar.Location = new System.Drawing.Point(1086, 118);
+            this.btnChar.Name = "btnChar";
+            this.btnChar.Size = new System.Drawing.Size(112, 34);
+            this.btnChar.TabIndex = 2;
+            this.btnChar.Text = "Char";
+            this.btnChar.UseVisualStyleBackColor = true;
+            this.btnChar.Click += new System.EventHandler(this.btnChar_Click);
+            // 
             // TmpGraphicForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1096, 703);
+            this.ClientSize = new System.Drawing.Size(1312, 826);
+            this.Controls.Add(this.btnChar);
+            this.Controls.Add(this.btnDrawLine);
             this.Controls.Add(this.pnlMain);
             this.Name = "TmpGraphicForm";
             this.Text = "TmpGraphicForm";
@@ -56,5 +80,7 @@ namespace Desk.Gist.Winform.GraphicGist
         #endregion
 
         private System.Windows.Forms.Panel pnlMain;
+        private System.Windows.Forms.Button btnDrawLine;
+        private System.Windows.Forms.Button btnChar;
     }
 }
