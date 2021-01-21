@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desk.Gist.Test", "test\Desk
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desk.Gist.Test.ConsoleApp", "src\Desk.Gist.Test.ConsoleApp\Desk.Gist.Test.ConsoleApp.csproj", "{A91BDAE6-B5EE-4B0F-98EE-186500FE87F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desk.Gist.Winform", "src\Desk.Gist.Winform\Desk.Gist.Winform.csproj", "{2DF4CDDD-7924-475F-B626-CE5DE8F338EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desk.Gist.Winform", "src\Desk.Gist.Winform\Desk.Gist.Winform.csproj", "{2DF4CDDD-7924-475F-B626-CE5DE8F338EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desk.Gist.WPF", "src\Desk.Gist.WPF\Desk.Gist.WPF.csproj", "{530B92A9-F256-4643-B2D0-C0E1C763472C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{2DF4CDDD-7924-475F-B626-CE5DE8F338EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DF4CDDD-7924-475F-B626-CE5DE8F338EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DF4CDDD-7924-475F-B626-CE5DE8F338EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{530B92A9-F256-4643-B2D0-C0E1C763472C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{530B92A9-F256-4643-B2D0-C0E1C763472C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{530B92A9-F256-4643-B2D0-C0E1C763472C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{530B92A9-F256-4643-B2D0-C0E1C763472C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
