@@ -51,11 +51,7 @@ namespace Desk.Gist.API.System.Linq.Enumerable
             }
         }
 
-        /// <summary>
-        /// ToDictionary 和ToLookUp 都是通过 key 来找到相应的键值，
-        /// ToDictionary 转换成是键值对 关系是一一对应的关系【key值是唯一的不能重复】。
-        /// ToLookUp：ToLookUp类似于Dictionary<string, List>【key值可重复】
-        /// </summary>
+
         public static void ToLookupGist2()
         {
             var ticketlist = GetList();
