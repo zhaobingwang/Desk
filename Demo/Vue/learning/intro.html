@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <div id="app">{{message}}</div>
+      <div id="app-2">
+        <!--
+              v-bind attribute 被称为指令，指令带有前缀 v-，以表示它们是 Vue 提供的特殊 attribute
+              在这里，该指令的意思是：“将这个元素节点的 title attribute 和 Vue 实例的 message property 保持一致”。
+          -->
+        <span v-bind:title="message">
+          鼠标悬停几秒钟查看此处动态绑定的提示信息！
+        </span>
+      </div>
+      <div id="app-3">
+        <p v-if="seen">现在你看到我了</p>
+      </div>
+
+      <div id="app-4">
+        <ol>
+          <li v-for="todo in todos">{{todo.text}}</li>
+        </ol>
+      </div>
+
+      <div id="app-5">
+        <p>{{message}}</p>
+        <button v-on:click="reverseMessage">Reverse Message</button>
+      </div>
+
+      <div id="app-6">
+        <p>{{message}}</p>
+        <input v-model="message" />
+      </div>
+
+      <div id="app-7">
+        <ol>
+          <todo-item
+            v-for="item in groceryList"
+            v-bind:todo="item"
+            v-bind:key="item.id"
+          >
+          </todo-item>
+        </ol>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  var app = new Vue({
+    el: "#app",
+    data: {
+      message: "Hello Vue",
+    },
+  });
+
+  var app2 = new Vue({
+    el: "#app-2",
+    data: {
+      message: "页面加载于 " + new Date().toLocaleString(),
+    },
+  });
+
+  var app3 = new Vue({
+    el: "#app-3",
+    data: {
+      seen: true,
+    },
+  });
+
+  var app4 = new Vue({
+    el: "#app-4",
+    data: {
+      todos: [
+        { text: "学习Vue" },
+        { text: "学习JavaScript" },
+        { text: "学习Python" },
+      ],
+    },
+  });
+
+  var app5 = new Vue({
+    el: "#app-5",
+    data: {
+      message: "Hello,Vue.",
+    },
+    methods: {
+      reverseMessage: function () {
+        this.message = this.message.split("").reverse().join("");
+      },
+    },
+  });
+
+  var app6 = new Vue({
+    el: "#app-6",
+    data: {
+      message: "Hello,Vue.",
+    },
+  });
+
+  Vue.component("todo-item", {
+    // todo-item 组件现在接受一个
+    // "prop"，类似于一个自定义 attribute。
+    // 这个 prop 名为 todo。
+    props: ["todo"],
+    template: "<li>{{todo.text}}</li>",
+  });
+
+  var app7 = new Vue({
+    el: "#app-7",
+    data: {
+      groceryList: [
+        { id: 0, text: "蔬菜" },
+        { id: 1, text: "水果" },
+        { id: 2, text: "其他" },
+      ],
+    },
+  });
+</script>
