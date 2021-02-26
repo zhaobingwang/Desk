@@ -33,6 +33,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desk.ConsoleApp", "src\Desk
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desk.Demo.Client.WinformApp", "..\Demo\Desk.Demo.Client.WinformApp\Desk.Demo.Client.WinformApp.csproj", "{2C95BB63-BBE6-4350-94EC-A3E5BE1A692F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desk.Demo", "Desk.Demo\Desk.Demo.csproj", "{D5E2BAD4-BE51-4EB3-985A-283B839633BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{2C95BB63-BBE6-4350-94EC-A3E5BE1A692F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C95BB63-BBE6-4350-94EC-A3E5BE1A692F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C95BB63-BBE6-4350-94EC-A3E5BE1A692F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5E2BAD4-BE51-4EB3-985A-283B839633BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5E2BAD4-BE51-4EB3-985A-283B839633BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5E2BAD4-BE51-4EB3-985A-283B839633BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5E2BAD4-BE51-4EB3-985A-283B839633BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -104,6 +110,7 @@ Global
 		{83CA0CB3-ADAB-4BB9-B790-B3B16DACAED7} = {8A7CA0A5-C2ED-4661-9296-9E90EB975ED0}
 		{2C66B445-2446-44CD-B9D2-A5106D1EF586} = {E050EB64-4E41-44BE-AAE7-96FF43BB5D82}
 		{2C95BB63-BBE6-4350-94EC-A3E5BE1A692F} = {8A7CA0A5-C2ED-4661-9296-9E90EB975ED0}
+		{D5E2BAD4-BE51-4EB3-985A-283B839633BD} = {8A7CA0A5-C2ED-4661-9296-9E90EB975ED0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9EDF470C-CD1D-4FF0-A857-50CB74179B1F}
