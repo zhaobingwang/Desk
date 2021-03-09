@@ -110,6 +110,85 @@ namespace Desk.Gist.Fundamentals
             Console.WriteLine(replaced);
         }
 
+        public static void MatchMode()
+        {
+            Console.WriteLine("不区分大小写模式：");
+            // 不区分大小写 ?i
+            var pattern = @"(?i)cat";
+            var str = "catCATCat";
+            var matchs = Regex.Matches(str, pattern);
+            matchs.ToList().ForEach(x => Console.WriteLine(x));
+            // output:
+            // cat
+            // CAT
+            // Cat
+
+            // 连续出现两个cat
+            Console.WriteLine("连续出现两个cat");
+            str = "cat cat CAT cat";
+            pattern = @"(?i)(cat) \1";
+            matchs = Regex.Matches(str, pattern);
+            matchs.ToList().ForEach(x => Console.WriteLine(x));
+            // output:
+            // cat cat
+            // CAT cat
+
+            // 连续出现两个cat && 大小写一致
+            Console.WriteLine("连续出现两个cat && 大小写一致");
+            str = "cat cat CAT cat CAT CAT";
+            pattern = @"((?i)cat) \1";
+            matchs = Regex.Matches(str, pattern);
+            matchs.ToList().ForEach(x => Console.WriteLine(x));
+            // output:
+            // cat cat
+            // CAT CAT
+
+            // 部分区分大小写
+            Console.WriteLine("部分区分大小写");
+            str = "the cat The cat THE cat the Cat the CAT";
+            pattern = @"((?i)THE) cat";
+            matchs = Regex.Matches(str, pattern);
+            matchs.ToList().ForEach(x => Console.WriteLine(x));
+            // output:
+            // the cat
+            // The cat
+            // THE cat
+
+            // 直接使用编程语言中的预定义常量接口区分大小写
+            Console.WriteLine("直接使用编程语言中的预定义常量接口区分大小写");
+            pattern = @"(?i)cat";
+            str = "catCATCat";
+            matchs = Regex.Matches(str, pattern, RegexOptions.IgnoreCase);
+            matchs.ToList().ForEach(x => Console.WriteLine(x));
+            // output:
+            // cat
+            // CAT
+            // Cat
+            Console.WriteLine("\n\n");
+
+
+            // 点号通配模式(单行匹配模式)
+            Console.WriteLine("点号通配模式(单行匹配模式)：");
+            str = "the little cat\nthe small cat";
+            pattern = @"(?s)^the|cat$";
+            matchs = Regex.Matches(str, pattern);
+            matchs.ToList().ForEach(x => Console.WriteLine(x));
+
+            // 多行匹配
+            Console.WriteLine("多行匹配：");
+            str = "the little cat\nthe small cat";
+            pattern = @"(?m)^the|cat$";
+            matchs = Regex.Matches(str, pattern);
+            matchs.ToList().ForEach(x => Console.WriteLine(x));
+
+            // 注释模式 (?#comment)
+            Console.WriteLine("注释模式 (?#comment)");
+            pattern = @"(?i)cat(?#这是一个注释)";
+            str = "catCATCat";
+            matchs = Regex.Matches(str, pattern, RegexOptions.IgnoreCase);
+            matchs.ToList().ForEach(x => Console.WriteLine(x));
+        }
+
         public static void WriteLine(string title = null)
         {
             Console.WriteLine();
