@@ -48,6 +48,9 @@ namespace Desk.Gist.Fundamentals
 
         }
 
+        /// <summary>
+        /// 分组
+        /// </summary>
         public static void Group()
         {
             var datetimeString = "2021-03-05 15:00:00";
@@ -92,8 +95,8 @@ namespace Desk.Gist.Fundamentals
             Console.WriteLine("分组引用：");
             var repeatString = "ABAB CDCD";
             pattern = @"(\w{2})\1";
-            var matchs = Regex.Matches(repeatString, pattern);
-            matchs.ToList().ForEach(x => Console.WriteLine(x)); // ABAB\nCDCD
+            var matches = Regex.Matches(repeatString, pattern);
+            matches.ToList().ForEach(x => Console.WriteLine(x)); // ABAB\nCDCD
 
             // 替换
             Console.WriteLine("替换：");
@@ -110,14 +113,17 @@ namespace Desk.Gist.Fundamentals
             Console.WriteLine(replaced);
         }
 
+        /// <summary>
+        /// 匹配模式
+        /// </summary>
         public static void MatchMode()
         {
             Console.WriteLine("不区分大小写模式：");
             // 不区分大小写 ?i
             var pattern = @"(?i)cat";
             var str = "catCATCat";
-            var matchs = Regex.Matches(str, pattern);
-            matchs.ToList().ForEach(x => Console.WriteLine(x));
+            var matches = Regex.Matches(str, pattern);
+            matches.ToList().ForEach(x => Console.WriteLine(x));
             // output:
             // cat
             // CAT
@@ -127,8 +133,8 @@ namespace Desk.Gist.Fundamentals
             Console.WriteLine("连续出现两个cat");
             str = "cat cat CAT cat";
             pattern = @"(?i)(cat) \1";
-            matchs = Regex.Matches(str, pattern);
-            matchs.ToList().ForEach(x => Console.WriteLine(x));
+            matches = Regex.Matches(str, pattern);
+            matches.ToList().ForEach(x => Console.WriteLine(x));
             // output:
             // cat cat
             // CAT cat
@@ -137,8 +143,8 @@ namespace Desk.Gist.Fundamentals
             Console.WriteLine("连续出现两个cat && 大小写一致");
             str = "cat cat CAT cat CAT CAT";
             pattern = @"((?i)cat) \1";
-            matchs = Regex.Matches(str, pattern);
-            matchs.ToList().ForEach(x => Console.WriteLine(x));
+            matches = Regex.Matches(str, pattern);
+            matches.ToList().ForEach(x => Console.WriteLine(x));
             // output:
             // cat cat
             // CAT CAT
@@ -147,8 +153,8 @@ namespace Desk.Gist.Fundamentals
             Console.WriteLine("部分区分大小写");
             str = "the cat The cat THE cat the Cat the CAT";
             pattern = @"((?i)THE) cat";
-            matchs = Regex.Matches(str, pattern);
-            matchs.ToList().ForEach(x => Console.WriteLine(x));
+            matches = Regex.Matches(str, pattern);
+            matches.ToList().ForEach(x => Console.WriteLine(x));
             // output:
             // the cat
             // The cat
@@ -158,8 +164,8 @@ namespace Desk.Gist.Fundamentals
             Console.WriteLine("直接使用编程语言中的预定义常量接口区分大小写");
             pattern = @"(?i)cat";
             str = "catCATCat";
-            matchs = Regex.Matches(str, pattern, RegexOptions.IgnoreCase);
-            matchs.ToList().ForEach(x => Console.WriteLine(x));
+            matches = Regex.Matches(str, pattern, RegexOptions.IgnoreCase);
+            matches.ToList().ForEach(x => Console.WriteLine(x));
             // output:
             // cat
             // CAT
@@ -171,22 +177,90 @@ namespace Desk.Gist.Fundamentals
             Console.WriteLine("点号通配模式(单行匹配模式)：");
             str = "the little cat\nthe small cat";
             pattern = @"(?s)^the|cat$";
-            matchs = Regex.Matches(str, pattern);
-            matchs.ToList().ForEach(x => Console.WriteLine(x));
+            matches = Regex.Matches(str, pattern);
+            matches.ToList().ForEach(x => Console.WriteLine(x));
 
             // 多行匹配
             Console.WriteLine("多行匹配：");
             str = "the little cat\nthe small cat";
             pattern = @"(?m)^the|cat$";
-            matchs = Regex.Matches(str, pattern);
-            matchs.ToList().ForEach(x => Console.WriteLine(x));
+            matches = Regex.Matches(str, pattern);
+            matches.ToList().ForEach(x => Console.WriteLine(x));
 
             // 注释模式 (?#comment)
             Console.WriteLine("注释模式 (?#comment)");
             pattern = @"(?i)cat(?#这是一个注释)";
             str = "catCATCat";
-            matchs = Regex.Matches(str, pattern, RegexOptions.IgnoreCase);
-            matchs.ToList().ForEach(x => Console.WriteLine(x));
+            matches = Regex.Matches(str, pattern, RegexOptions.IgnoreCase);
+            matches.ToList().ForEach(x => Console.WriteLine(x));
+        }
+
+        /// <summary>
+        /// 断言
+        /// </summary>
+        public static void Assertion()
+        {
+            // 1. 单词边界 \b
+            Console.WriteLine("1. 单词边界");
+            var str = "tom asked me if I would go fishing with him tomorrow";
+            var pattern = @"\btom\b";
+            var matches = Regex.Matches(str, pattern);
+            matches.ToList().ForEach(x => Console.WriteLine(x));
+            // output:
+            // tom
+
+            // 2. 行的开始或结束 ^ $
+            Console.WriteLine("2. 行的开始或结束 ^ $");
+            // Windows换行符： \r\n
+            // Linux/macOS换行符： \n
+
+            // 3. 环视 
+            // (?<=Y)   左边是Y
+            // (?<!Y)   左边不是Y
+            // (?=Y)    右边是Y
+            // (?!Y)    右边不是Y
+            Console.WriteLine("3. 环视");
+            // 邮编：第一位是1-9，一共6位数字
+            Console.WriteLine("错误匹配");
+            str = "012345\n";
+            str += "123456\n";
+            str += "1234567\n";
+            str += "123456654321\n";
+            pattern = @"[1-9]\d{5}";
+            matches = Regex.Matches(str, pattern);
+            matches.ToList().ForEach(x => Console.WriteLine(x));
+            // output:
+            // 123456
+            // 123456
+            // 123456
+            // 654321
+            Console.WriteLine("正确匹配");
+            pattern = @"(?<!\d)[1-9]\d{5}(?!\d)";
+            matches = Regex.Matches(str, pattern);
+            matches.ToList().ForEach(x => Console.WriteLine(x));
+            // output:
+            // 123456
+
+
+            Console.WriteLine("------找相同字符串-------");
+
+            Console.WriteLine("无匹配");
+            str = "the little cat cat2 is in the hat hat2,we like it";
+            pattern = @"(\w+)(\s+\b\1\b)";
+            matches = Regex.Matches(str, pattern);
+            matches.ToList().ForEach(x => Console.WriteLine(x));
+
+            // output:
+            // 
+
+            Console.WriteLine("匹配到重复字符串");
+            str = "the little cat cat is in the hat hat,we like it";
+            pattern = @"(\w+)(\s+\b\1\b)";
+            matches = Regex.Matches(str, pattern);
+            matches.ToList().ForEach(x => Console.WriteLine(x));
+            // output:
+            // cat cat
+            // hat hat
         }
 
         public static void WriteLine(string title = null)
