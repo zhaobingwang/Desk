@@ -310,6 +310,22 @@ namespace Desk.Gist.Fundamentals
             // ()[]{}
         }
 
+        public static void Unicode()
+        {
+            Console.WriteLine(char.GetUnicodeCategory('中'));
+            Console.WriteLine("查找所有标点字符");
+            // 参见：https://docs.microsoft.com/zh-cn/dotnet/standard/base-types/character-classes-in-regular-expressions#SupportedNamedBlocks
+            var str = "123正则表达式abc990()asd-=+.,a，";
+            var pattern = @"\p{P}+";
+            var matches = Regex.Matches(str, pattern);
+            matches.ToList().ForEach(x => Console.WriteLine(x));
+            // output:
+            // ()
+            // -
+            // .,
+            // ，
+        }
+
         public static void WriteLine(string title = null)
         {
             Console.WriteLine();
