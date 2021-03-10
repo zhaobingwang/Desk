@@ -263,6 +263,53 @@ namespace Desk.Gist.Fundamentals
             // hat hat
         }
 
+        /// <summary>
+        /// 转义
+        /// </summary>
+        public static void EscapeCharacter()
+        {
+            Console.WriteLine("----------------------");
+            var str = @"abc\d";
+            var pattern = @"\\d";   // 匹配 \d
+            var matches = Regex.Matches(str, pattern);
+            matches.ToList().ForEach(x => Console.WriteLine(x));
+            // output:
+            // \d
+            Console.WriteLine("----------------------");
+            str = @"abc\d111d\";
+            pattern = @"\\|d";   // 匹配 \ || d
+            matches = Regex.Matches(str, pattern);
+            matches.ToList().ForEach(x => Console.WriteLine(x));
+            // output:
+            // \
+            // d
+            // d
+            // \
+            Console.WriteLine("元字符转义");
+            str = "+";
+            pattern = @"\+";
+            matches = Regex.Matches(str, pattern);
+            matches.ToList().ForEach(x => Console.WriteLine(x));
+            // output:
+            // +
+
+            Console.WriteLine("括号转义");
+            // 方括号[]和花括号{}只需要转义开括号，圆括号()两个都需要转义
+            str = "()[]{}";
+            pattern = @"\(\)\[]\{}";
+            matches = Regex.Matches(str, pattern);
+            matches.ToList().ForEach(x => Console.WriteLine(x));
+            // output:
+            // ()[]{}
+
+            str = "()[]{}";
+            pattern = @"\(\)\[\]\{\}";
+            matches = Regex.Matches(str, pattern);
+            matches.ToList().ForEach(x => Console.WriteLine(x));
+            // output:
+            // ()[]{}
+        }
+
         public static void WriteLine(string title = null)
         {
             Console.WriteLine();

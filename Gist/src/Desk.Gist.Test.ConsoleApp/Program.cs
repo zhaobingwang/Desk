@@ -10,7 +10,7 @@ namespace Desk.Gist.Test.ConsoleApp
     {
         static void Main(string[] args)
         {
-            RegexGist.Assertion();
+            RegexGist.EscapeCharacter();
         }
     }
 }
