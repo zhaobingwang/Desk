@@ -1,5 +1,5 @@
 ﻿
-namespace Desk.Demo.Client.WinformApp
+namespace Desk.Gist.Demo.WinformApp
 {
     partial class OpenCVForm
     {

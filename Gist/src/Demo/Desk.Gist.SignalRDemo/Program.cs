@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Desk.Demo.Client.WinformApp
+namespace Desk.Gist.SignalRDemo
 {
     static class Program
     {
@@ -17,7 +17,7 @@ namespace Desk.Demo.Client.WinformApp
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new OpenCVForm());
+            Application.Run(new Home());
         }
     }
 }

@@ -6,7 +6,7 @@ using Emgu.CV.CvEnum;
 using Emgu.CV.Structure;
 using System.Drawing;
 
-namespace Desk.Demo
+namespace Desk.Gist.Demo
 {
     public static class OpenCVDemo
     {

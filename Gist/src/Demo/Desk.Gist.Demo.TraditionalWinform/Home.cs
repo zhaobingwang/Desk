@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Desk.Demo.Client.WinformApp
+namespace Desk.Gist.Demo.TraditionalWinform
 {
-    public partial class OpenCVForm : Form
+    public partial class Home : Form
     {
-        public OpenCVForm()
+        public Home()
         {
             InitializeComponent();
-        }
-
-        private void OpenCVForm_Load(object sender, EventArgs e)
-        {
-            OpenCVDemo.CutFace("face.jpg");
         }
     }
 }

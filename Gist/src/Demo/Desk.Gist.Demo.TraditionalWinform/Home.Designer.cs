@@ -1,7 +1,7 @@
 ﻿
-namespace Desk.Demo.TraditionalWinform.Grid__
+namespace Desk.Gist.Demo.TraditionalWinform
 {
-    partial class ManualFillRecord
+    partial class Home
     {
         /// <summary>
         /// Required designer variable.
@@ -31,14 +31,13 @@ namespace Desk.Demo.TraditionalWinform.Grid__
         {
             this.SuspendLayout();
             // 
-            // ManualFillRecord
+            // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1382, 857);
-            this.Name = "ManualFillRecord";
-            this.Text = "ManualFillRecord";
-            this.Load += new System.EventHandler(this.ManualFillRecord_Load);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "Home";
+            this.Text = "Home";
             this.ResumeLayout(false);
 
         }
@@ -46,3 +45,4 @@ namespace Desk.Demo.TraditionalWinform.Grid__
         #endregion
     }
 }
+

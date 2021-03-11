@@ -8,7 +8,7 @@ using AngleSharp.Html.Parser;
 /// Here is AngleSharp demo.
 /// The documentation of AngleSharp is located in https://github.com/AngleSharp/AngleSharp/blob/master/doc/index.md
 /// </summary>
-namespace Desk.Demo.AngleSharpGist
+namespace Desk.Gist.Demo.AngleSharpGist
 {
     class Program
     {

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using gregn6Lib;
 
-namespace Desk.Demo.TraditionalWinform.Grid__
+namespace Desk.Gist.Demo.TraditionalWinform.Grid__
 {
     public partial class ManualFillRecord : Form
     {

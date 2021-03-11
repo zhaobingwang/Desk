@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 /// Here is Magicodes.IE demo.
 /// The project of Magicodes.IE is located in: https://github.com/dotnetcore/Magicodes.IE
 /// </summary>
-namespace Desk.Demo.MagicodesIEGist
+namespace Desk.Gist.Demo.MagicodesIEGist
 {
     class Program
     {

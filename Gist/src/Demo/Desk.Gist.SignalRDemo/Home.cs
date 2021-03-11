@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Desk.Demo.TraditionalWinform
+namespace Desk.Gist.SignalRDemo
 {
     public partial class Home : Form
     {
@@ -16,5 +16,6 @@ namespace Desk.Demo.TraditionalWinform
         {
             InitializeComponent();
         }
+
     }
 }
