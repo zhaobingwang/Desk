@@ -29,6 +29,23 @@ namespace Desk.Gist.ABPDemo.Web.Menus
             var l = context.GetLocalizer<ABPDemoResource>();
 
             context.Menu.Items.Insert(0, new ApplicationMenuItem(ABPDemoMenus.Home, l["Menu:Home"], "~/"));
+
+            context.Menu.AddItem(
+                new ApplicationMenuItem(
+                    "BooksStore",
+                    l["Menu:BookStore"],
+                    icon: "fa fa-book"
+                ).AddItem(
+                    new ApplicationMenuItem(
+                        "BooksStore.Books",
+                        l["Menu:Books"],
+                        url: "/Books"
+                    )
+                )
+            );
+
+
+
         }
     }
 }
