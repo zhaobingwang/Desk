@@ -36,6 +36,8 @@ using Volo.Abp.UI.Navigation.Urls;
 using Volo.Abp.UI;
 using Volo.Abp.UI.Navigation;
 using Volo.Abp.VirtualFileSystem;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Desk.Gist.ABPDemo.Permissions;
 
 namespace Desk.Gist.ABPDemo.Web
 {
@@ -83,6 +85,13 @@ namespace Desk.Gist.ABPDemo.Web
             ConfigureNavigationServices();
             ConfigureAutoApiControllers();
             ConfigureSwaggerServices(context.Services);
+
+            Configure<RazorPagesOptions>(options =>
+            {
+                options.Conventions.AuthorizePage("/Books/Index", ABPDemoPermissions.Books.Default);
+                options.Conventions.AuthorizePage("/Books/CreateModal", ABPDemoPermissions.Books.Create);
+                options.Conventions.AuthorizePage("/Books/EditModal", ABPDemoPermissions.Books.Edit);
+            });
         }
 
         private void ConfigureUrls(IConfiguration configuration)

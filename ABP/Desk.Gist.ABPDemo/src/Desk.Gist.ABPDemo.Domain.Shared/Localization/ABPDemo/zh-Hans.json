@@ -10,6 +10,22 @@
     "SuccessfullyDeleted": "删除成功！",
     "Edit": "编辑",
     "Delete": "删除",
-    "Update": "编辑"
+    "Update": "编辑",
+
+    // Books权限
+    "Permission:BookStore": "网上书店",
+    "Permission:Books": "书籍管理",
+    "Permission:Books.Create": "新增数据",
+    "Permission:Books.Edit": "编辑书籍",
+    "Permission:Books.Delete": "删除书籍",
+
+    // 书籍类型枚举
+    "Enum:BookType:0": "未知",
+    "Enum:BookType:1": "科技",
+    "Enum:BookType:2": "文学",
+    "Enum:BookType:3": "艺术",
+    "Enum:BookType:4": "天文",
+    "Enum:BookType:5": "历史",
+    "Enum:BookType:6": "地理",
   }
 }

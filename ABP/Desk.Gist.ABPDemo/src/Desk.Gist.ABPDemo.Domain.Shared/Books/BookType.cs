@@ -6,12 +6,12 @@ namespace Desk.Gist.ABPDemo.Books
 {
     public enum BookType
     {
-        未知,
-        科技,
-        文学,
-        艺术,
-        天文,
-        历史,
-        地理
+        未知 = 0,
+        科技 = 1,
+        文学 = 2,
+        艺术 = 3,
+        天文 = 4,
+        历史 = 5,
+        地理 = 6
     }
 }

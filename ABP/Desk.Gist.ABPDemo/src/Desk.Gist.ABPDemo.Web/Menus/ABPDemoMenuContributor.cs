@@ -5,6 +5,7 @@ using Desk.Gist.ABPDemo.Localization;
 using Desk.Gist.ABPDemo.MultiTenancy;
 using Volo.Abp.TenantManagement.Web.Navigation;
 using Volo.Abp.UI.Navigation;
+using Desk.Gist.ABPDemo.Permissions;
 
 namespace Desk.Gist.ABPDemo.Web.Menus
 {
@@ -30,21 +31,22 @@ namespace Desk.Gist.ABPDemo.Web.Menus
 
             context.Menu.Items.Insert(0, new ApplicationMenuItem(ABPDemoMenus.Home, l["Menu:Home"], "~/"));
 
-            context.Menu.AddItem(
-                new ApplicationMenuItem(
-                    "BooksStore",
-                    l["Menu:BookStore"],
-                    icon: "fa fa-book"
-                ).AddItem(
-                    new ApplicationMenuItem(
-                        "BooksStore.Books",
-                        l["Menu:Books"],
-                        url: "/Books"
-                    )
-                )
+            var bootStoreMenu = new ApplicationMenuItem(
+                "BooksStore",
+                l["Menu:BookStore"],
+                icon: "fa fa-book"
             );
 
+            context.Menu.AddItem(bootStoreMenu);
 
+            if (await context.IsGrantedAsync(ABPDemoPermissions.Books.Default))
+            {
+                bootStoreMenu.AddItem(new ApplicationMenuItem(
+                    "BooksStore.Books",
+                    l["Menu:Books"],
+                    url: "/Books"
+                ));
+            }
 
         }
     }

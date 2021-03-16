@@ -1,4 +1,5 @@
 ﻿using Desk.Gist.ABPDemo.Books;
+using Desk.Gist.ABPDemo.Permissions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,11 @@ namespace Desk.Gist.ABPDemo
     {
         public BookAppService(IRepository<Book, Guid> repository) : base(repository)
         {
+            GetPolicyName = ABPDemoPermissions.Books.Default;
+            GetListPolicyName = ABPDemoPermissions.Books.Default;
+            CreatePolicyName = ABPDemoPermissions.Books.Create;
+            UpdatePolicyName = ABPDemoPermissions.Books.Edit;
+            DeletePolicyName = ABPDemoPermissions.Books.Delete;
         }
     }
 }
