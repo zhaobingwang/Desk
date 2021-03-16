@@ -13,6 +13,7 @@ namespace Desk.Gist.ABPDemo
 
             CreateMap<Book, BookDto>();
             CreateMap<CreateUpdateBookDto, Book>();
+            CreateMap<BookDto, CreateUpdateBookDto>();
         }
     }
 }
