@@ -1,4 +1,5 @@
-﻿using Desk.Gist.ABPDemo.Books;
+﻿using Desk.Gist.ABPDemo.Authors;
+using Desk.Gist.ABPDemo.Books;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp;
 using Volo.Abp.EntityFrameworkCore.Modeling;
@@ -25,6 +26,16 @@ namespace Desk.Gist.ABPDemo.EntityFrameworkCore
                 b.ToTable(ABPDemoConsts.DbTablePrefix + "Books", ABPDemoConsts.DbSchema);
                 b.ConfigureByConvention();
                 b.Property(x => x.Name).IsRequired().HasMaxLength(128);
+            });
+
+            builder.Entity<Author>(b =>
+            {
+                b.ToTable(ABPDemoConsts.DbTablePrefix + "Authors", ABPDemoConsts.DbSchema);
+                b.ConfigureByConvention();
+
+                b.Property(x => x.Name).IsRequired().HasMaxLength(AuthorConsts.MaxNameLength);
+
+                b.HasIndex(x => x.Name);
             });
         }
     }

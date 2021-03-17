@@ -6,6 +6,7 @@ using Volo.Abp.EntityFrameworkCore.Modeling;
 using Volo.Abp.Identity;
 using Volo.Abp.Users.EntityFrameworkCore;
 using Desk.Gist.ABPDemo.Books;
+using Desk.Gist.ABPDemo.Authors;
 
 namespace Desk.Gist.ABPDemo.EntityFrameworkCore
 {
@@ -23,6 +24,7 @@ namespace Desk.Gist.ABPDemo.EntityFrameworkCore
     {
         public DbSet<AppUser> Users { get; set; }
         public DbSet<Book> Books { get; set; }
+        public DbSet<Author> Authors { get; set; }
 
         /* Add DbSet properties for your Aggregate Roots / Entities here.
          * Also map them inside ABPDemoDbContextModelCreatingExtensions.ConfigureABPDemo
