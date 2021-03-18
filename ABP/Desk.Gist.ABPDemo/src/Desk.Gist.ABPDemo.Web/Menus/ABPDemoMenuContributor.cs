@@ -31,20 +31,29 @@ namespace Desk.Gist.ABPDemo.Web.Menus
 
             context.Menu.Items.Insert(0, new ApplicationMenuItem(ABPDemoMenus.Home, l["Menu:Home"], "~/"));
 
-            var bootStoreMenu = new ApplicationMenuItem(
+            var bookStoreMenu = new ApplicationMenuItem(
                 "BooksStore",
                 l["Menu:BookStore"],
                 icon: "fa fa-book"
             );
 
-            context.Menu.AddItem(bootStoreMenu);
+            context.Menu.AddItem(bookStoreMenu);
 
             if (await context.IsGrantedAsync(ABPDemoPermissions.Books.Default))
             {
-                bootStoreMenu.AddItem(new ApplicationMenuItem(
+                bookStoreMenu.AddItem(new ApplicationMenuItem(
                     "BooksStore.Books",
                     l["Menu:Books"],
                     url: "/Books"
+                ));
+            }
+
+            if (await context.IsGrantedAsync(ABPDemoPermissions.Authors.Default))
+            {
+                bookStoreMenu.AddItem(new ApplicationMenuItem(
+                    "BooksStore.Authors",
+                    l["Menu:Authors"],
+                    url: "/Authors"
                 ));
             }
 

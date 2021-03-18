@@ -1,0 +1,31 @@
+﻿@page
+@using Desk.Gist.ABPDemo.Localization
+@using Desk.Gist.ABPDemo.Permissions
+@using Desk.Gist.ABPDemo.Web.Pages.Authors
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<ABPDemoResource> L
+@inject IAuthorizationService AuthorizationService
+@model IndexModel
+
+@section scripts{
+    <abp-script src="/Pages/Authors/Index.js"></abp-script>
+}
+<abp-card>
+    <abp-card-header>
+        <abp-row>
+            <abp-column size="_6">
+                <abp-card-title>@L["Authors"]</abp-card-title>
+            </abp-column>
+            <abp-column size="_6" class="text-right">
+                @if (await AuthorizationService.IsGrantedAsync(ABPDemoPermissions.Authors.Create))
+                {
+                    <abp-button id="NewAuthorButton" text="@L["NewAuthor"].Value" icon="plus" button-type="Primary"></abp-button>
+                }
+            </abp-column>
+        </abp-row>
+    </abp-card-header>
+    <abp-card-body>
+        <abp-table striped-rows="true" id="AuthorsTable"></abp-table>
+    </abp-card-body>
+</abp-card>

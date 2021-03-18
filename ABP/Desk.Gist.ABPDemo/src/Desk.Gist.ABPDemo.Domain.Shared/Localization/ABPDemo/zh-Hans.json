@@ -12,14 +12,14 @@
     "Delete": "删除",
     "Update": "编辑",
 
-    // Books权限
+    // 权限: Books
     "Permission:BookStore": "网上书店",
 
     "Permission:Books": "书籍管理",
     "Permission:Books.Create": "新增书籍",
     "Permission:Books.Edit": "编辑书籍",
     "Permission:Books.Delete": "删除书籍",
-
+    // 权限: Authors
     "Permission:Authors": "作者管理",
     "Permission:Authors.Create": "新增作者",
     "Permission:Authors.Edit": "编辑作者",
@@ -32,6 +32,12 @@
     "Enum:BookType:3": "艺术",
     "Enum:BookType:4": "天文",
     "Enum:BookType:5": "历史",
-    "Enum:BookType:6": "地理"
+    "Enum:BookType:6": "地理",
+
+    "Menu:Authors": "作者",
+    "Authors": "作者",
+    "AuthorDeletionConfirmationMessage": "删除此作者：'{0}'?",
+    "BirthDate": "出生日期",
+    "NewAuthor": "新作者",
   }
 }
