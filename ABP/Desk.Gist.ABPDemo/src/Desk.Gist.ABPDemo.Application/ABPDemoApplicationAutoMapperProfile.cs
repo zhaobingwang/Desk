@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Desk.Gist.ABPDemo.Authors;
 using Desk.Gist.ABPDemo.Books;
 
 namespace Desk.Gist.ABPDemo
@@ -14,6 +15,8 @@ namespace Desk.Gist.ABPDemo
             CreateMap<Book, BookDto>();
             CreateMap<CreateUpdateBookDto, Book>();
             CreateMap<BookDto, CreateUpdateBookDto>();
+
+            CreateMap<Author, AuthorDto>();
         }
     }
 }

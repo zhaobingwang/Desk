@@ -11,7 +11,7 @@ using Volo.Abp.EntityFrameworkCore;
 
 namespace Desk.Gist.ABPDemo.Authors
 {
-    public class EFCoreAuthorRepository : EfCoreRepository<ABPDemoDbContext, Author, Guid>
+    public class EFCoreAuthorRepository : EfCoreRepository<ABPDemoDbContext, Author, Guid>, IAuthorRepository
     {
         public EFCoreAuthorRepository(IDbContextProvider<ABPDemoDbContext> dbContextProvider) : base(dbContextProvider)
         {
