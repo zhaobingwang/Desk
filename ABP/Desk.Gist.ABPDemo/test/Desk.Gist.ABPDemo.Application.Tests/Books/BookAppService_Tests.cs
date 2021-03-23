@@ -1,4 +1,5 @@
-﻿using Shouldly;
+﻿using Desk.Gist.ABPDemo.Authors;
+using Shouldly;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +14,11 @@ namespace Desk.Gist.ABPDemo.Books
     public class BookAppService_Tests : ABPDemoApplicationTestBase
     {
         private readonly IBookAppService _bookAppService;
+        private readonly IAuthorAppService _authorAppService;
         public BookAppService_Tests()
         {
             _bookAppService = GetRequiredService<IBookAppService>();
+            _authorAppService = GetRequiredService<IAuthorAppService>();
         }
 
         [Fact]
@@ -28,16 +31,20 @@ namespace Desk.Gist.ABPDemo.Books
 
             // Assert
             result.TotalCount.ShouldBeGreaterThan(0);
-            result.Items.ShouldContain(b => b.Name == "三体Ⅱ·黑暗森林");
+            result.Items.ShouldContain(b => b.Name == "三体Ⅱ·黑暗森林" &&
+                                            b.AuthorName == "刘慈欣");
         }
 
         [Fact]
         public async Task Should_Create_A_Valid_Book()
         {
+            var authors = await _authorAppService.GetListAsync(new GetAuthorListDto());
+            var firstAuthor = authors.Items.First();
             // Act
             var result = await _bookAppService.CreateAsync(
                 new CreateUpdateBookDto
                 {
+                    AuthorId = firstAuthor.Id,
                     Name = "测试",
                     Price = 28,
                     PublishDate = DateTime.Now,

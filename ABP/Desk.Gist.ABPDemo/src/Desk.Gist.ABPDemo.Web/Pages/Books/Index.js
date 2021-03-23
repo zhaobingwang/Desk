@@ -8,7 +8,7 @@
             order: [[1, "asc"]],
             searching: false,
             scrollX: true,
-            ajax: abp.libs.datatables.createAjax(desk.gist.aBPDemo.book.getList),
+            ajax: abp.libs.datatables.createAjax(desk.gist.aBPDemo.books.book.getList),
             columnDefs: [
                 {
                     title: l('Actions'),
@@ -43,6 +43,10 @@
                 {
                     title: l('Name'),
                     data: "name"
+                },
+                {
+                    title: l('Author'),
+                    data: "authorName"
                 },
                 {
                     title: l('Type'),

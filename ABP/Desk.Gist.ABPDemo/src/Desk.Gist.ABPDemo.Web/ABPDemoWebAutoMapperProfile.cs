@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Desk.Gist.ABPDemo.Authors;
+using Desk.Gist.ABPDemo.Books;
 
 namespace Desk.Gist.ABPDemo.Web
 {
@@ -16,6 +17,11 @@ namespace Desk.Gist.ABPDemo.Web
             CreateMap<AuthorDto, Pages.Authors.EditModalModel.EditAuthorViewModel>();
             CreateMap<Pages.Authors.EditModalModel.EditAuthorViewModel,
                       UpdateAuthorDto>();
+
+            CreateMap<Pages.Books.CreateModalModel.CreateBookViewModel, CreateUpdateBookDto>();
+            CreateMap<BookDto, Pages.Books.EditModalModel.EditBookViewModel>();
+            CreateMap<Pages.Books.EditModalModel.EditBookViewModel, CreateUpdateBookDto>();
+
         }
     }
 }

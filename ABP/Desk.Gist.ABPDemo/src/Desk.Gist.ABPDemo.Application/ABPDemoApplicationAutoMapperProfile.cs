@@ -17,6 +17,7 @@ namespace Desk.Gist.ABPDemo
             CreateMap<BookDto, CreateUpdateBookDto>();
 
             CreateMap<Author, AuthorDto>();
+            CreateMap<Author, AuthorLookupDto>();
         }
     }
 }

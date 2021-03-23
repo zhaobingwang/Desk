@@ -9,5 +9,6 @@ namespace Desk.Gist.ABPDemo.Books
 {
     public interface IBookAppService : ICrudAppService<BookDto, Guid, PagedAndSortedResultRequestDto, CreateUpdateBookDto>
     {
+        Task<ListResultDto<AuthorLookupDto>> GetAuthorLookupAsync();
     }
 }
