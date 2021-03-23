@@ -56,6 +56,9 @@ namespace Desk.Web
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)
         {
+            // 自定义默认表名前缀
+            DbPreConfigure.ConfigurePrefix();
+
             context.Services.PreConfigure<AbpMvcDataAnnotationsLocalizationOptions>(options =>
             {
                 options.AddAssemblyResource(

@@ -19,10 +19,11 @@ namespace Desk.EntityFrameworkCore
      */
     public class DeskMigrationsDbContext : AbpDbContext<DeskMigrationsDbContext>
     {
-        public DeskMigrationsDbContext(DbContextOptions<DeskMigrationsDbContext> options) 
+        public DeskMigrationsDbContext(DbContextOptions<DeskMigrationsDbContext> options)
             : base(options)
         {
-
+            // 自定义默认表名前缀
+            DbPreConfigure.ConfigurePrefix();
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
