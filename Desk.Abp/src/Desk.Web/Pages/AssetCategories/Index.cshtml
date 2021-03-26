@@ -1,0 +1,27 @@
+﻿@page
+@using Desk.Localization
+@using Desk.Permissions
+@using Desk.Web.Pages.AssetCategories
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<DeskResource> L
+@model IndexModel
+@section scripts{
+    <abp-script src="/Pages/AssetCategories/Index.js"></abp-script>
+}
+
+<abp-card>
+    <abp-card-header>
+        <abp-row>
+            <abp-column size="_6">
+                <abp-card-title>@L["AssetCategories"]</abp-card-title>
+            </abp-column>
+            <abp-column size="_6">
+                <abp-button id="NewCategoryButton" text="@L["NewAssetCategory"].Value" icon="plus" button-type="Primary"></abp-button>
+            </abp-column>
+        </abp-row>
+    </abp-card-header>
+
+    <abp-card-body>
+        <abp-table striped-rows="true" id="AssetCategoriesTable"></abp-table>
+    </abp-card-body>
+</abp-card>

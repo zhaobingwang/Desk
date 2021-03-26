@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Desk.Assets;
 
 namespace Desk.Web
 {
@@ -6,7 +7,8 @@ namespace Desk.Web
     {
         public DeskWebAutoMapperProfile()
         {
-            //Define your AutoMapper configuration here for the Web project.
+            //Define your AutoMapper configuration here for the Web project.CreateAssetCategoryViewModel
+            CreateMap<Pages.AssetCategories.CreateModalModel.CreateAssetCategoryViewModel, CreateAssetCategoryDto>();
         }
     }
 }

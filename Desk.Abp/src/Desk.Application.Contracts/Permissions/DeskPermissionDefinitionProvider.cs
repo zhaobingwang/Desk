@@ -8,10 +8,19 @@ namespace Desk.Permissions
     {
         public override void Define(IPermissionDefinitionContext context)
         {
-            var myGroup = context.AddGroup(DeskPermissions.GroupName);
+            var deskGroup = context.AddGroup(DeskPermissions.GroupName, L("Permission:Desk")); ;
 
-            //Define your own permissions here. Example:
-            //myGroup.AddPermission(DeskPermissions.MyPermission1, L("Permission:MyPermission1"));
+            // Asset-Category
+            var assetCategoryPermission = deskGroup.AddPermission(DeskPermissions.AssetCategories.Default, L("Permission:Asset:Category"));
+            assetCategoryPermission.AddChild(DeskPermissions.AssetCategories.Create, L("Permission:Asset:Category.Create"));
+            assetCategoryPermission.AddChild(DeskPermissions.AssetCategories.Edit, L("Permission:Asset:Category.Edit"));
+            assetCategoryPermission.AddChild(DeskPermissions.AssetCategories.Delete, L("Permission:Asset:Category.Delete"));
+
+            // Asset-Record
+            var assetRecordPermission = deskGroup.AddPermission(DeskPermissions.AssetRecords.Default, L("Permission:Asset:Record"));
+            assetRecordPermission.AddChild(DeskPermissions.AssetRecords.Create, L("Permission:Asset:Record.Create"));
+            assetRecordPermission.AddChild(DeskPermissions.AssetRecords.Edit, L("Permission:Asset:Record.Edit"));
+            assetRecordPermission.AddChild(DeskPermissions.AssetRecords.Delete, L("Permission:Asset:Record.Delete"));
         }
 
         private static LocalizableString L(string name)

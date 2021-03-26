@@ -29,6 +29,24 @@ namespace Desk.Web.Menus
             var l = context.GetLocalizer<DeskResource>();
 
             context.Menu.Items.Insert(0, new ApplicationMenuItem(DeskMenus.Home, l["Menu:Home"], "~/"));
+
+
+
+            #region 添加业务菜单
+            var assetMenu = new ApplicationMenuItem(
+                "Assets",
+                l["Menu:Assets"],
+                icon: "fa fa-book"
+            );
+
+            context.Menu.AddItem(assetMenu);
+
+            assetMenu.AddItem(new ApplicationMenuItem(
+                "Assets.Categories",
+                l["Menu:AssetCategories"],
+                url: "/AssetCategories"
+            ));
+            #endregion
         }
     }
 }
