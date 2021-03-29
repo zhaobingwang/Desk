@@ -7,6 +7,13 @@
 
     // Assets
     "Menu:Assets": "资产管理",
-    "Menu:AssetCategories": "资产类别"
+    "Menu:AssetCategories": "资产类别",
+    // Asset/Category/Index
+    "Asset:Category:Index.Title": "资产类别",
+    "NewAssetCategory": "新键资产类别",
+    "Asset:Category:id": "类别ID",
+    "Asset:Category:Name": "类别名",
+    "Asset:Category:ParentId": "父类别ID",
+    "Asset:Category:ParentName": "父类别",
   }
 }

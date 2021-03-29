@@ -52,19 +52,19 @@
                     }
                 },
                 {
-                    title: l('Id'),
+                    title: l('Asset:Category:id'),
                     data: "id"
                 },
                 {
-                    title: l('Name'),
+                    title: l('Asset:Category:Name'),
                     data: "name"
                 },
                 {
-                    title: l('ParentId'),
+                    title: l('Asset:Category:ParentId'),
                     data: "parentId"
                 },
                 {
-                    title: l('ParentName'),
+                    title: l('Asset:Category:ParentName'),
                     data: "parentName"
                 },
                 //{

@@ -3,6 +3,17 @@
   "texts": {
     "Menu:Home": "Home",
     "Welcome": "Welcome",
-    "LongWelcomeMessage": "Welcome to the application. This is a startup project based on the ABP framework. For more information, visit abp.io."
+    "LongWelcomeMessage": "Welcome to the application. This is a startup project based on the ABP framework. For more information, visit abp.io.",
+
+    // Asset
+    "Menu:Assets": "Asset management",
+    "Menu:AssetCategories": "Asset category",
+    // Asset/Category/Index
+    "Asset:Category:Index.Title": "Asset Category",
+    "NewAssetCategory": "New asset category",
+    "Asset:Category:id": "Category id",
+    "Asset:Category:Name": "Category name",
+    "Asset:Category:ParentId": "Parent id",
+    "Asset:Category:ParentName": "Parent name"
   }
 }
