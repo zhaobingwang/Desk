@@ -5,7 +5,7 @@
 @using Microsoft.Extensions.Localization
 @using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
 
-@model CreateModalModel
+@model EditModalModel
 
 @inject IStringLocalizer<DeskResource> L
 
@@ -17,6 +17,7 @@
     <abp-modal>
         <abp-modal-header title="@L["Update"].Value"></abp-modal-header>
         <abp-modal-body>
+            <abp-input asp-for="AssetCategory.Id" />
             <abp-input asp-for="AssetCategory.Name"></abp-input>
             <abp-select asp-for="AssetCategory.ParentId" asp-items="@Model.RootCategoryItem"></abp-select>
         </abp-modal-body>

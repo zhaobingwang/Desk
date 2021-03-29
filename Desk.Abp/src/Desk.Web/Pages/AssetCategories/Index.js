@@ -38,7 +38,7 @@
                                         );
                                     },
                                     action: function (data) {
-                                        desk.gist.aBPDemo.authors.author
+                                        desk.assets.assetCategory
                                             .delete(data.record.id)
                                             .then(function () {
                                                 abp.notify.info(

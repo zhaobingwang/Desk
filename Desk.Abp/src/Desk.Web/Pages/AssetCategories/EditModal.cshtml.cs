@@ -23,27 +23,38 @@ namespace Desk.Web.Pages.AssetCategories
             _assetCategoryAppService = assetCategoryAppService;
         }
 
-        public async Task OnGet(Guid id)
+        public async Task OnGetAsync(Guid id)
         {
             var ac = await _assetCategoryAppService.GetAsync(id);
             var pid = ac.ParentId;
 
-            AssetCategory = new EditAssetCategotyViewModel();
+            AssetCategory = ObjectMapper.Map<AssetCategoryDto, EditAssetCategotyViewModel>(ac);
             RootCategoryItem = new List<SelectListItem> {
                 new SelectListItem{ Value=Guid.Empty.ToString(),Text="Root"}
             };
 
             // TODO: fill data to level one category
             var acsRoot = await _assetCategoryAppService.GetRootListAsync();
-            acsRoot.ForEach(x =>
+            foreach (var item in acsRoot)
             {
+                if (item.Id == id)
+                {
+                    continue;
+                }
+
                 RootCategoryItem.Add(new SelectListItem
                 {
-                    Value = x.Id.ToString(),
-                    Text = x.Name,
-                    Selected = x.Id == pid ? true : false
+                    Value = item.Id.ToString(),
+                    Text = item.Name,
+                    Selected = item.Id == pid ? true : false
                 });
-            });
+            }
+        }
+
+        public async Task<IActionResult> OnPostAsync()
+        {
+            await _assetCategoryAppService.UpdateAsync(AssetCategory.Id, ObjectMapper.Map<EditAssetCategotyViewModel, UpdateAssetCategoryDto>(AssetCategory));
+            return NoContent();
         }
 
         public class EditAssetCategotyViewModel

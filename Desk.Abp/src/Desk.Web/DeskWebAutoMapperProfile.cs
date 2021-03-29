@@ -9,6 +9,8 @@ namespace Desk.Web
         {
             //Define your AutoMapper configuration here for the Web project.CreateAssetCategoryViewModel
             CreateMap<Pages.AssetCategories.CreateModalModel.CreateAssetCategoryViewModel, CreateAssetCategoryDto>();
+            CreateMap<AssetCategoryDto, Pages.AssetCategories.EditModalModel.EditAssetCategotyViewModel>();
+            CreateMap<Pages.AssetCategories.EditModalModel.EditAssetCategotyViewModel, UpdateAssetCategoryDto>();
         }
     }
 }

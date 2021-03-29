@@ -24,14 +24,13 @@ namespace Desk.Web.Pages.AssetCategories
             _assetCategoryAppService = assetCategoryAppService;
         }
 
-        public async Task OnGet()
+        public async Task OnGetAsync()
         {
             AssetCategory = new CreateAssetCategoryViewModel();
             RootCategoryItem = new List<SelectListItem> {
                 new SelectListItem{ Value=Guid.Empty.ToString(),Text="Root",Selected=true}
             };
 
-            // TODO: fill data to level one category
             var ac = await _assetCategoryAppService.GetRootListAsync();
             ac.ForEach(x =>
             {

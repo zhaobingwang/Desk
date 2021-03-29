@@ -14,5 +14,12 @@ namespace Desk.Assets
         Task<List<AssetCategory>> GetRootAsync(bool isDeleted = false);
 
         Task<int> CountUnDeletedAsync();
+
+        /// <summary>
+        /// 找到指定ID的记录（ID=id or parent id）
+        /// </summary>
+        /// <param name="id">id or parent id</param>
+        /// <returns></returns>
+        Task<List<AssetCategory>> GetIncludeParentIdAsync(Guid id);
     }
 }

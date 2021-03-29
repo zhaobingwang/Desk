@@ -29,6 +29,12 @@ namespace Desk.Assets
             return await dbSet.FirstOrDefaultAsync(ac => ac.Name == name);
         }
 
+        public async Task<List<AssetCategory>> GetIncludeParentIdAsync(Guid id)
+        {
+            var dbSet = await GetDbSetAsync();
+            return await dbSet.Where(x => x.Id == id || x.ParentId == id).ToListAsync();
+        }
+
         public async Task<List<AssetCategory>> GetListAsync(int skipCount, int maxResultCount, string sorting, string filter = null)
         {
             var dbSet = await GetDbSetAsync();

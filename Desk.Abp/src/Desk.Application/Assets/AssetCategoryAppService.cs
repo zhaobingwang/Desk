@@ -35,7 +35,10 @@ namespace Desk.Assets
         [Authorize(DeskPermissions.AssetCategories.Delete)]
         public async Task DeleteAsync(Guid id)
         {
-            await _assetCategoryRepository.DeleteAsync(id);
+            // if it's root category, delete all.
+            var acs = await _assetCategoryRepository.GetIncludeParentIdAsync(id);
+            acs.ForEach(x => x.IsDeleted = true);
+            await _assetCategoryRepository.UpdateManyAsync(acs);
         }
 
         public async Task<AssetCategoryDto> GetAsync(Guid id)
@@ -58,6 +61,7 @@ namespace Desk.Assets
             //            select new AssetCategoryDto { Id = ac1.Id, Name = ac1.Name, ParentId = ac1.ParentId, ParentName = ac2.Name };
 
             var query = from ac1 in queryable
+                        where ac1.IsDeleted == false
                         join ac2 in queryable on ac1.ParentId equals ac2.Id into tmp
                         from ac in tmp.DefaultIfEmpty()
                         select new AssetCategoryDto { Id = ac1.Id, Name = ac1.Name, ParentId = ac1.ParentId, ParentName = ac.Name == null ? "Root" : ac.Name };
