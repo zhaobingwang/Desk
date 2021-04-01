@@ -15,5 +15,6 @@ namespace Desk.Assets
         Task DeleteAsync(Guid id);
 
         Task<List<AssetCategoryDto>> GetRootListAsync();
+        Task<List<AssetCategoryDto>> GetNotInRootListAsync();
     }
 }

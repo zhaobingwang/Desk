@@ -1,0 +1,27 @@
+﻿@page
+@using Desk.Localization
+@using Desk.Permissions
+@using Desk.Web.Pages.AssetRecords
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<DeskResource> L
+@model IndexModel
+@section scripts{
+    <abp-script src="/Pages/AssetRecords/Index.js"></abp-script>
+}
+
+<abp-card>
+    <abp-card-header>
+        <abp-row>
+            <abp-column size="_6">
+                <abp-card-title>@L["Asset:Record:Index.Title"]</abp-card-title>
+            </abp-column>
+            <abp-column size="_6">
+                <abp-button id="NewRecordButton" text="@L["NewAssetRecord"].Value" icon="plus" button-type="Primary"></abp-button>
+            </abp-column>
+        </abp-row>
+    </abp-card-header>
+
+    <abp-card-body>
+        <abp-table striped-rows="true" id="AssetRecordsTable"></abp-table>
+    </abp-card-body>
+</abp-card>

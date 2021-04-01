@@ -12,6 +12,7 @@ namespace Desk
              * into multiple profile classes for a better organization. */
 
             CreateMap<AssetCategory, AssetCategoryDto>();
+            CreateMap<AssetRecord, AssetRecordDto>();
         }
     }
 }

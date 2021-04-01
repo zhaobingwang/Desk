@@ -5,6 +5,7 @@ using Desk.Localization;
 using Desk.MultiTenancy;
 using Volo.Abp.TenantManagement.Web.Navigation;
 using Volo.Abp.UI.Navigation;
+using Desk.Permissions;
 
 namespace Desk.Web.Menus
 {
@@ -33,19 +34,38 @@ namespace Desk.Web.Menus
 
 
             #region 添加业务菜单
-            var assetMenu = new ApplicationMenuItem(
-                "Assets",
-                l["Menu:Assets"],
-                icon: "fa fa-book"
-            );
 
-            context.Menu.AddItem(assetMenu);
+            // Asset
+            var assetCategoryGranted = await context.IsGrantedAsync(DeskPermissions.AssetCategories.Default);
+            var assetRecordGranted = await context.IsGrantedAsync(DeskPermissions.AssetRecords.Default);
+            if (assetCategoryGranted || assetRecordGranted)
+            {
+                var assetMenu = new ApplicationMenuItem(
+                    "Assets",
+                    l["Menu:Assets"],
+                    icon: "fa fa-book"
+                );
 
-            assetMenu.AddItem(new ApplicationMenuItem(
-                "Assets.Categories",
-                l["Menu:AssetCategories"],
-                url: "/AssetCategories"
-            ));
+                context.Menu.AddItem(assetMenu);
+
+                if (assetCategoryGranted)
+                {
+                    assetMenu.AddItem(new ApplicationMenuItem(
+                        "Assets.Categories",
+                        l["Menu:AssetCategories"],
+                        url: "/AssetCategories"
+                    ));
+                }
+                if (assetRecordGranted)
+                {
+                    assetMenu.AddItem(new ApplicationMenuItem(
+                        "Assets.Records",
+                        l["Menu:AssetRecords"],
+                        url: "/AssetRecords"
+                    ));
+                }
+            }
+
             #endregion
         }
     }

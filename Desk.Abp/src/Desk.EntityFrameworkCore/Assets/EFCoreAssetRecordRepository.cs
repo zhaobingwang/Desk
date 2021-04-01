@@ -14,5 +14,18 @@ namespace Desk.Assets
         public EFCoreAssetRecordRepository(IDbContextProvider<DeskDbContext> dbContextProvider) : base(dbContextProvider)
         {
         }
+
+        public async Task<bool> TodayRecordExistAsync(Guid categoryId, DateTime? today = null)
+        {
+            if (today == null)
+            {
+                today = DateTime.Today;
+            }
+            var dbSet = await GetDbSetAsync();
+            var count = dbSet.Count(
+                x => x.CreationTime.StartOfCurrentDay() == today.Value.StartOfCurrentDay() &&
+                x.CategoryId == categoryId);
+            return count > 0;
+        }
     }
 }

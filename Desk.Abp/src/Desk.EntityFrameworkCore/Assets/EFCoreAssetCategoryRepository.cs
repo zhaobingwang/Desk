@@ -48,6 +48,15 @@ namespace Desk.Assets
             return ac;
         }
 
+        public async Task<List<AssetCategory>> GetNotInRootAsync(bool isDeleted = false)
+        {
+            var dbSet = await GetDbSetAsync();
+            var ac = await dbSet
+                .Where(x => x.ParentId != Guid.Empty && x.IsDeleted == isDeleted)
+                .ToListAsync();
+            return ac;
+        }
+
         public async Task<List<AssetCategory>> GetRootAsync(bool isDeleted = false)
         {
             var dbSet = await GetDbSetAsync();

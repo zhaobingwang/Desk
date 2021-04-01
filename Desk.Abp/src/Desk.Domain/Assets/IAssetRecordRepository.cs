@@ -9,5 +9,6 @@ namespace Desk.Assets
 {
     public interface IAssetRecordRepository : IRepository<AssetRecord, Guid>
     {
+        Task<bool> TodayRecordExistAsync(Guid categoryId, DateTime? today = null);
     }
 }

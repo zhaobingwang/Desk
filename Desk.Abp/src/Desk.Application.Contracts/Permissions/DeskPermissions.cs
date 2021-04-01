@@ -18,9 +18,9 @@
         public static class AssetRecords
         {
             public const string Default = GroupName + ".Asset.Record";
-            public const string Create = GroupName + ".Create";
-            public const string Edit = GroupName + ".Edit";
-            public const string Delete = GroupName + ".Delete";
+            public const string Create = Default + ".Create";
+            public const string Edit = Default + ".Edit";
+            public const string Delete = Default + ".Delete";
         }
     }
 }

@@ -7,11 +7,11 @@ namespace Desk.Assets
 {
     public class CreateAssetRecordDto
     {
-        [Required]
-        [StringLength(AssetConsts.MaxRecordNameLength)]
-        public string Name { get; set; }
+        //[Required]
+        //[StringLength(AssetConsts.MaxRecordNameLength)]
+        //public string Name { get; set; }
         public float Price { get; set; }
         public Guid CategoryId { get; set; }
-        public bool IsDeleted { get; set; }
+        //public bool IsDeleted { get; set; }
     }
 }

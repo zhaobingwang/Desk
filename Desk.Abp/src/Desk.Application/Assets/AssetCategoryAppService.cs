@@ -84,6 +84,13 @@ namespace Desk.Assets
 
             //return new PagedResultDto<AssetCategoryDto>(totalCount, ObjectMapper.Map<List<AssetCategory>, List<AssetCategoryDto>>(ac));
         }
+
+        public async Task<List<AssetCategoryDto>> GetNotInRootListAsync()
+        {
+            var ac = await _assetCategoryRepository.GetNotInRootAsync();
+            return ObjectMapper.Map<List<AssetCategory>, List<AssetCategoryDto>>(ac);
+        }
+
         public async Task<List<AssetCategoryDto>> GetRootListAsync()
         {
             var ac = await _assetCategoryRepository.GetRootAsync();

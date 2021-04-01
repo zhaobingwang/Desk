@@ -1,0 +1,25 @@
+﻿@page
+
+@using Desk.Localization
+@using Desk.Web.Pages.AssetRecords
+@using Microsoft.Extensions.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+
+@model CreateModalModel
+
+@inject IStringLocalizer<DeskResource> L
+
+@{
+    Layout = null;
+}
+
+<form asp-page="/AssetRecords/CreateModal">
+    <abp-modal>
+        <abp-modal-header title="@L["NewAssetRecord"].Value"></abp-modal-header>
+        <abp-modal-body>
+            <abp-input asp-for="AssetRecord.Price"></abp-input>
+            <abp-select asp-for="AssetRecord.CategoryId" asp-items="@Model.NotInRootCategoryItem"></abp-select>
+        </abp-modal-body>
+        <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)"></abp-modal-footer>
+    </abp-modal>
+</form>
