@@ -34,6 +34,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desk.Gist.Demo.TraditionalW
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desk.Gist.SignalRDemo", "src\Demo\Desk.Gist.SignalRDemo\Desk.Gist.SignalRDemo.csproj", "{47051522-26A5-4200-927A-87FC4927F172}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desk.Gist.Security", "src\Desk.Gist.Security\Desk.Gist.Security.csproj", "{B53CC3F6-7EEA-4B2E-9126-1B9544224110}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -88,6 +90,10 @@ Global
 		{47051522-26A5-4200-927A-87FC4927F172}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47051522-26A5-4200-927A-87FC4927F172}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47051522-26A5-4200-927A-87FC4927F172}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B53CC3F6-7EEA-4B2E-9126-1B9544224110}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B53CC3F6-7EEA-4B2E-9126-1B9544224110}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B53CC3F6-7EEA-4B2E-9126-1B9544224110}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B53CC3F6-7EEA-4B2E-9126-1B9544224110}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
