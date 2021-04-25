@@ -22,6 +22,7 @@ namespace Desk.Assets
                 today = DateTime.Today;
             }
             var dbSet = await GetDbSetAsync();
+
             var count = dbSet.Count(
                 x => x.CreationTime.StartOfCurrentDay() == today.Value.StartOfCurrentDay() &&
                 x.CategoryId == categoryId);
