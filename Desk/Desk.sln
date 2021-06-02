@@ -23,7 +23,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Winforms", "..\Dependencies
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desk.ConsoleApp", "src\Desk.ConsoleApp\Desk.ConsoleApp.csproj", "{2C66B445-2446-44CD-B9D2-A5106D1EF586}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desk.WebApi", "src\Desk.WebApi\Desk.WebApi.csproj", "{7B4244AD-34B5-48C2-9520-BBDE6727DCA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desk.WebApi", "src\Desk.WebApi\Desk.WebApi.csproj", "{7B4244AD-34B5-48C2-9520-BBDE6727DCA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desk.ServiceCenter", "src\Desk.ServiceCenter\Desk.ServiceCenter.csproj", "{5EEA4320-AAE5-4347-A4A0-641886012E14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desk.Client.Win", "src\Desk.Client.Win\Desk.Client.Win.csproj", "{C08BAF6D-DC12-4EA3-8DC3-29B8D68C19AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,6 +71,14 @@ Global
 		{7B4244AD-34B5-48C2-9520-BBDE6727DCA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B4244AD-34B5-48C2-9520-BBDE6727DCA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B4244AD-34B5-48C2-9520-BBDE6727DCA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EEA4320-AAE5-4347-A4A0-641886012E14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EEA4320-AAE5-4347-A4A0-641886012E14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EEA4320-AAE5-4347-A4A0-641886012E14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EEA4320-AAE5-4347-A4A0-641886012E14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C08BAF6D-DC12-4EA3-8DC3-29B8D68C19AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C08BAF6D-DC12-4EA3-8DC3-29B8D68C19AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C08BAF6D-DC12-4EA3-8DC3-29B8D68C19AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C08BAF6D-DC12-4EA3-8DC3-29B8D68C19AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
