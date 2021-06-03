@@ -38,6 +38,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desk.Gist.Security", "src\D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10-Default", "10-Default", "{9DCD23C0-6EB8-4628-AD05-E8F9ABC83CE0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desk.Gist.WorkerServiceDemo", "src\Desk.Gist.WorkerServiceDemo\Desk.Gist.WorkerServiceDemo.csproj", "{89AA19C9-9A05-402E-AE60-C1F4892B15EB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -96,6 +98,10 @@ Global
 		{B53CC3F6-7EEA-4B2E-9126-1B9544224110}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B53CC3F6-7EEA-4B2E-9126-1B9544224110}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B53CC3F6-7EEA-4B2E-9126-1B9544224110}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89AA19C9-9A05-402E-AE60-C1F4892B15EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89AA19C9-9A05-402E-AE60-C1F4892B15EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89AA19C9-9A05-402E-AE60-C1F4892B15EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89AA19C9-9A05-402E-AE60-C1F4892B15EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -114,6 +120,7 @@ Global
 		{D60F7EEE-5F98-4C67-95DC-7778540AF3E9} = {9958F009-445B-471F-BDC5-F772237DEC14}
 		{47051522-26A5-4200-927A-87FC4927F172} = {9958F009-445B-471F-BDC5-F772237DEC14}
 		{B53CC3F6-7EEA-4B2E-9126-1B9544224110} = {9DCD23C0-6EB8-4628-AD05-E8F9ABC83CE0}
+		{89AA19C9-9A05-402E-AE60-C1F4892B15EB} = {9958F009-445B-471F-BDC5-F772237DEC14}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5562638A-BC25-48DA-AAD8-743A2D23BAE0}
