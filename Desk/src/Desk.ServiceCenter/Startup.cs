@@ -28,12 +28,12 @@ namespace Desk.ServiceCenter
         {
             services.AddRazorPages();
 
-            services.AddCors(options => options.AddPolicy("CorsPolicy", builder =>
-            {
-                builder.AllowAnyMethod().AllowAnyHeader()
-                    .WithOrigins("http://localhost:5000")
-                    .AllowCredentials();
-            }));
+            //services.AddCors(options => options.AddPolicy("CorsPolicy", builder =>
+            //{
+            //    builder.AllowAnyMethod().AllowAnyHeader()
+            //        .WithOrigins("http://localhost:5000")
+            //        .AllowCredentials();
+            //}));
 
             services.AddSignalR();
 
@@ -43,15 +43,15 @@ namespace Desk.ServiceCenter
                 q.UseMicrosoftDependencyInjectionScopedJobFactory();
 
                 // Create a "key" for the job
-                var jobKey = new JobKey("HelloWorldJob");
+                var jobKey = new JobKey("NotifyJob");
 
                 // Register the job with the DI container
-                q.AddJob<HelloWorldJob>(opts => opts.WithIdentity(jobKey));
+                q.AddJob<NotifyJob>(opts => opts.WithIdentity(jobKey));
 
                 // Create a trigger for the job
                 q.AddTrigger(opts => opts
                     .ForJob(jobKey) // link to the HelloWorldJob
-                    .WithIdentity("HelloWorldJob-trigger") // give the trigger a unique name
+                    .WithIdentity("notify-job-trigger") // give the trigger a unique name
                     .WithCronSchedule("0/5 * * * * ?")); // run every 5 seconds
             });
             services.AddQuartzServer(options =>

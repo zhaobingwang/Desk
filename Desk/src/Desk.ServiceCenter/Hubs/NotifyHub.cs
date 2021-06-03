@@ -9,9 +9,5 @@ namespace Desk.ServiceCenter.Hubs
 {
     public class NotifyHub : Hub
     {
-        //public async Task Test()
-        //{
-        //    await Clients.All.SendAsync("dev", "aaaa");
-        //}
     }
 }
